@@ -11,53 +11,131 @@
 
 <body>
 <div id="top"><!--top starts -->
-<div class="container"> <!--Container starts -->
-<div class ="col-md-6 offer"> <!-- col md 6 offer starts -->
-<a href="#" class="btn btn-success btn-sm">
-Welcome: Guest!
-</a>
+	<div class="container"> <!--Container starts -->
+		<div class ="col-md-6 offer"> <!-- col md 6 offer starts -->
+			<a href="#" class="btn btn-success btn-sm">
+			Welcome: Guest!
+			</a>
 
-<a href="#">
-Shopping Cart Total Price: RM 100, Total Items: 2
-</a>
+			<a href="#">
+			Shopping Cart Total Price: RM 100, Total Items: 2
+			</a>
 
-</div><!--col md 6 offer ends -->
+				</div><!--col md 6 offer ends -->
+				<div class="col-md-6"> <!--col-md-6 starts -->
+				<ul class="menu"><!--menu starts -->
+					<li>
+						<a href="customer_register.php">
+							Register
+						</a>
+					</li>
 
-<div class="col-md-6"> <!--col-md-6 starts -->
-<ul class="menu"><!--menu starts -->
-	<li>
-		<a href="customer_register.php">
-			Register
-		</a>
-	</li>
+					<li>
+						<a href="checkout.php">
+							My Account
+						</a>
+					</li>
 
-	<li>
-		<a href="checkout.php">
-			My Account
-		</a>
-	</li>
+					<li>
+						<a href="cart.php">
+							Go To Cart
+						</a>
+					</li>
 
-	<li>
-		<a href="cart.php">
-			Go To Cart
-		</a>
-	</li>
+					<li>
+						<a href="checkout.php">
+							Login
+						</a>
+					</li>
 
-	<li>
-		<a href="checkout.php">
-			Login
-		</a>
-	</li>
-
-</ul><!--menu ends -->
-
-</div><!--col-md-6 ends -->
-
-
-</div><!--Container ends -->
-
+				</ul><!--menu ends -->
+				</div><!--col-md-6 offer ends -->
+	</div><!--Container ends -->
 </div><!--top ends -->
 
+<div class="navbar navbar-default" id="navbar"><!--Navbar default starts -->
+	<div class="container"><!--container starts -->
+		<div class="navbar-header"> <!--Navbar header starts -->
+			<a class="navbar-brand home" href="index.php"> <!--Navbar brand starts -->
+				<img src="images/logo.jpg"alt="Hitech" class="hidden-xs">
+				<img src="images/logo original-small.jpg"alt="Hitech" class="visible-xs">
+				
+			</a>  <!--Navbar brand ends -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+				<span class="sr-only">Toggle Navigation</span>
+				<i class="fa fa-align-justify"></i>
+			</button>
+
+			<button type="button" class="navbar-toggle" data-toggle="navbar-toggle" data-target="#search">
+				<span class="sr-only">Toggle Search</span>
+				<i class="fa fa-search	"></i>
+			</button>		
+
+		</div> <!--Navbar header ends -->
+
+			<div class="navbar-collapse collapse" id="navigation"> <!--navbar collapse starts -->
+
+				<div class="padding-nav"><!--padding nav starts -->
+
+					<ul class="nav navbar-nav navbar-left"><!--nav navbar-nav navbar-left starts -->
+
+						<li class="active">
+							<a href="index.php">Home</a>
+						</li>
+
+						<li>
+							<a href="shop.php">Shop</a>
+						</li>
+
+						<li>
+							<a href="checkout.php">My Account</a>
+						</li>
+
+						<li>
+							<a href="cart.php">Shopping Cart</a>
+						</li>
+
+						<li>
+							<a href="contact.php">Contact Us</a>
+						</li>
+
+					</ul><!--nav navbar-nav navbar-left ends -->
+
+				</div><!--padding nav ends -->
+
+					<a class="btn btn-primary navbar-btn right" href="cart.php"><!--"btn btn-primary navbar-btn right  starts-->
+						<i class="fa fa-shopping-cart"></i>
+						<span>4 items in cart</span>
+					</a><!--"btn btn-primary navbar-btn right ends-->
+
+					<div class="navbar-collapse collapse right"><!-- navbar collapse right starts-->
+
+						<button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
+							<span class="sr-only">Toggle Search</span>
+							<i class="fa fa-search"></i>
+						</button>	
+
+					</div><!-- navbar collapse right ends-->
+
+					<div class="collapse clearfix" id="search"><!--collapse clearfix starts -->
+						<form class="navbar-form" method="get" action="results.php">
+							<div class="input-group"> <!--input-group start -->
+								<input class="form-control" type="text" placeholder="Search" name="user_query" required></input>
+								<button type="submit" value="Search" name="search" class="btn btn-primary">
+									<i class="fa fa-search"></i>
+								</button>
+
+							</div><!--input group ends -->
+
+						</form>
+
+					</div><!--collapse clearfix ends -->
+
+
+			</div><!--navbar collapse ends -->		
+
+	</div> <!--Navbar default ends -->	
+</div><!--Navbar default ends -->
 
 
 
@@ -75,7 +153,9 @@ Shopping Cart Total Price: RM 100, Total Items: 2
 
 
 
-<script type="js/jquery.min.js"></script>
-<script src="js/boostrap.min.js"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
