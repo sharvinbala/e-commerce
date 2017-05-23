@@ -223,10 +223,10 @@
 				<div class="box same-height"><!--box same-height starts-->
 
 					<div class="icon">
-						<i class="fa fa-tags"></i>
+						<i class="fa fa-thumbs-up"></i>
 					</div>
 
-				<h3><a href="#">100% SATISFACTION GUARANTEED.</a></h3>	
+				<h3><a href="#">100% SATISFACTION.</a></h3>	
 					<p>
 						Free return for the first 3 days!
 					</p>
