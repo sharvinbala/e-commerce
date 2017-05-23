@@ -1,1 +1,1 @@
-# e-commerce
+# My e-commerce project.
