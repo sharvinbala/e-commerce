@@ -241,6 +241,102 @@
 
 </div><!--advantages ends -->
 
+<div id="hot"><!--hot starts -->
+	<div class="box"><!--box starts -->
+		<div class="container"><!--container starts -->
+			<div class="col-md-12"><!--col-md-12 starts -->
+				<h2>Latest This Week</h2>
+			</div><!--col-md-12 ends -->
+		</div><!--container ends -->
+	</div><!--box ends -->
+</div><!--hot end -->
+
+
+<div id="content" class="container"><!--container starts -->
+	<div class="row"><!--row starts -->
+		<div class="col-sm-4 col-sm-6 single"><!--col-sm-4 col-sm-6 single starts -->
+			<div class="product"><!--product starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/BDS-254-Premium.jpg" class="img-responsive">
+				</a>
+
+				<div class="text"><!--text starts -->
+					<h3><a href="details.php"></a>Basic Disposable Set 254</h3>
+					<p class="price">RM 25</p>
+					<p class="buttons">
+						<a href="details.php" class="btn btn-default">View Details</a>
+						<a href="details.php" class="btn btn-primary">
+						<i class="fa fa-shopping-cart"></i>Add to cart.
+					</a>	
+					</p>
+				</div><!--text ends -->
+
+			</div><!--product ends -->
+		</div><!--col-sm-4 col-sm-6 single ends -->
+
+		<div class="col-sm-4 col-sm-6 single"><!--col-sm-4 col-sm-6 single starts -->
+			<div class="product"><!--product starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/BDS-254-Premium.jpg" class="img-responsive">
+				</a>
+
+				<div class="text"><!--text starts -->
+					<h3><a href="details.php"></a>Basic Disposable Set 254</h3>
+					<p class="price">RM 25</p>
+					<p class="buttons">
+						<a href="details.php" class="btn btn-default">View Details</a>
+						<a href="details.php" class="btn btn-primary">
+						<i class="fa fa-shopping-cart"></i>Add to cart.
+					</a>	
+					</p>
+				</div><!--text ends -->
+
+			</div><!--product ends -->
+		</div><!--col-sm-4 col-sm-6 single ends -->
+
+		<div class="col-sm-4 col-sm-6 single"><!--col-sm-4 col-sm-6 single starts -->
+			<div class="product"><!--product starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/BDS-254-Premium.jpg" class="img-responsive">
+				</a>
+
+				<div class="text"><!--text starts -->
+					<h3><a href="details.php"></a>Basic Disposable Set 254</h3>
+					<p class="price">RM 25</p>
+					<p class="buttons">
+						<a href="details.php" class="btn btn-default">View Details</a>
+						<a href="details.php" class="btn btn-primary">
+						<i class="fa fa-shopping-cart"></i>Add to cart.
+					</a>	
+					</p>
+				</div><!--text ends -->
+
+			</div><!--product ends -->
+		</div><!--col-sm-4 col-sm-6 single ends -->
+
+		<div class="col-sm-4 col-sm-6 single"><!--col-sm-4 col-sm-6 single starts -->
+			<div class="product"><!--product starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/BDS-254-Premium.jpg" class="img-responsive">
+				</a>
+
+				<div class="text"><!--text starts -->
+					<h3><a href="details.php"></a>Basic Disposable Set 254</h3>
+					<p class="price">RM 25</p>
+					<p class="buttons">
+						<a href="details.php" class="btn btn-default">View Details</a>
+						<a href="details.php" class="btn btn-primary">
+						<i class="fa fa-shopping-cart"></i>Add to cart.
+					</a>	
+					</p>
+				</div><!--text ends -->
+
+			</div><!--product ends -->
+		</div><!--col-sm-4 col-sm-6 single ends -->
+
+	</div><!--row ends -->
+</div><!--container ends -->
+
 
 
 
