@@ -66,7 +66,7 @@
 				<i class="fa fa-align-justify"></i>
 			</button>
 
-			<button type="button" class="navbar-toggle" data-toggle="navbar-toggle" data-target="#search">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
 				<span class="sr-only">Toggle Search</span>
 				<i class="fa fa-search	"></i>
 			</button>		
@@ -121,10 +121,11 @@
 						<form class="navbar-form" method="get" action="results.php">
 							<div class="input-group"> <!--input-group start -->
 								<input class="form-control" type="text" placeholder="Search" name="user_query" required></input>
+									<span class="input-group-btn"> <!--input group button starts-->
 								<button type="submit" value="Search" name="search" class="btn btn-primary">
 									<i class="fa fa-search"></i>
 								</button>
-
+									</span><!--input group button ends-->
 							</div><!--input group ends -->
 
 						</form>
@@ -136,6 +137,38 @@
 
 	</div> <!--Navbar default ends -->	
 </div><!--Navbar default ends -->
+
+<div class="container" id="slider"> <!-- container slider begins -->
+	<div class="col-md-12"> <!-- col-md-12  begins -->
+		<div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- myCarousel  begins -->
+
+			<ol class="carousel-indicators"><!-- carousel indicators starts -->
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"</li>
+				<li data-target="#myCarousel" data-slide-to="2"</li>
+				<li data-target="#myCarousel" data-slide-to="3"</li>
+			</ol> <!-- carousel indicators ends -->
+
+				<div class="carousel-inner"><!-- carousel inner starts -->
+					<div class="item active">
+						<img src="admin_area/slides_images/banner 1.jpg">
+					</div>
+
+					<div class="item">
+						<img src="admin_area/slides_images/banner 2.jpg">
+					</div>
+
+					<div class="item">
+						<img src="admin_area/slides_images/banner 3.jpg">
+					</div>	
+
+				</div><!-- carousel inner ends -->
+
+
+
+		</div><!-- myCarousel ends -->
+	</div><!-- col-md-12 ends -->
+</div><!-- container slider ends -->
 
 
 
