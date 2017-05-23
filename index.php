@@ -164,6 +164,16 @@
 
 				</div><!-- carousel inner ends -->
 
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev"><!--left carousel control starts -->
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a><!--left carousel control ends -->
+
+				<a class="right carousel-control" href="#myCarousel" data-slide="next"><!--right carousel control starts -->
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a><!--right carousel control ends -->
+
 
 
 		</div><!-- myCarousel ends -->

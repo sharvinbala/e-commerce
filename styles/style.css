@@ -168,8 +168,14 @@ body
 
 #search .navbar-form .input-group .form-control
 {
-	width: 100%;
-	
+	width: 100%;	
+}
+
+/* Slider styles */
+
+#slider 
+{
+	margin-bottom: 40px;	
 }
 
 
