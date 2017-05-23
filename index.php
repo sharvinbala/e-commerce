@@ -173,13 +173,73 @@
 					<span class="glyphicon glyphicon-chevron-right"></span>
 					<span class="sr-only">Next</span>
 				</a><!--right carousel control ends -->
-
-
-
 		</div><!-- myCarousel ends -->
 	</div><!-- col-md-12 ends -->
 </div><!-- container slider ends -->
 
+<div id="advantages"> <!--advantages starts -->
+
+	<div class="container"><!--container starts-->
+
+		<div class="same-height-row"><!--same-height starts -->
+
+			<div class="col-sm-4"><!--col sm 4 starts -->
+
+				<div class="box same-height"><!--box same-height starts-->
+
+					<div class="icon">
+						<i class="fa fa-heart"></i>
+					</div>
+
+				<h3><a href="#">WE LOVE OUR CUSTOMERS.</a></h3>	
+					<p>
+						We are known to provide the best service.
+					</p>
+
+				</div><!--box same-height ends-->
+
+			</div><!--col sm 4 ends -->
+
+
+			<div class="col-sm-4"><!--col sm 4 starts -->
+
+				<div class="box same-height"><!--box same-height starts-->
+
+					<div class="icon">
+						<i class="fa fa-tags"></i>
+					</div>
+
+				<h3><a href="#">BEST PRICES.</a></h3>	
+					<p>
+						We offer the best prices!
+					</p>
+
+				</div><!--box same-height ends-->
+
+			</div><!--col sm 4 ends -->
+
+			<div class="col-sm-4"><!--col sm 4 starts -->
+
+				<div class="box same-height"><!--box same-height starts-->
+
+					<div class="icon">
+						<i class="fa fa-tags"></i>
+					</div>
+
+				<h3><a href="#">100% SATISFACTION GUARANTEED.</a></h3>	
+					<p>
+						Free return for the first 3 days!
+					</p>
+
+				</div><!--box same-height ends-->
+
+			</div><!--col sm 4 ends -->
+
+		</div><!--same-height ends -->
+
+	</div><!--container ends -->
+
+</div><!--advantages ends -->
 
 
 
