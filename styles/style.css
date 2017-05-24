@@ -324,7 +324,6 @@ body
 	padding: 20px 0;
 }
 
-
 #footer .social
 {
 	text-align: left;	
@@ -344,6 +343,19 @@ body
 	transition: all 0.2s ease-out;
 	vertical-align: bottom;
 	background-color: #555555;
+}
+
+#copyright
+{
+	padding: 20px;
+	background: #333;
+	font-size: 12px;
+	color: #ccc;
+}
+
+#copyright p
+{
+	margin: 0;
 }
 
 

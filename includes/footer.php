@@ -78,3 +78,16 @@
 		</div><!-- row ends -->
 	</div><!-- container starts -->
 </div><!-- Footer ends -->
+
+<div id="copyright"><!--copyright starts -->
+	<div class="container"><!--container starts -->
+		<div class="col-md-6"><!--col md 6 starts -->
+			<p class="pull-left">&copy; 2017 Hitech Infinity</p>
+		</div><!--col md 6 ends -->
+			<div class="col-md-6"><!--col md 6 starts -->
+				<p class="pull-right">
+					Template by <a href="#">Hitech Infinity</a>
+				</p>
+			</div><!--col md 6 ends -->
+	</div><!--container ends -->
+</div><!--copyright ends -->
