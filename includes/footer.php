@@ -61,6 +61,18 @@
 
 				</form><!--form ends -->
 
+				<hr>
+
+				<h4>Stay In Touch</h4>
+
+				<p class="social"><!--social starts -->
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-google-plus"></i></a>
+
+				</p><!-- social ends -->
+
 			</div><!--col-md-3 col-sm-6 ends -->
 
 		</div><!-- row ends -->
