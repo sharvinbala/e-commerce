@@ -281,6 +281,19 @@
 						</div><!-- center responsive ends -->
 
 					</div><!-- row ends -->
+
+					<center><!--center starts -->
+						<ul class="pagination"><!--pagination starts -->
+							<li><a href="shop.php">First Page</a></li>
+							<li><a href="shop.php">1</a></li>
+							<li><a href="shop.php">2</a></li>
+							<li><a href="shop.php">3</a></li>
+							<li><a href="shop.php">4</a></li>
+							<li><a href="shop.php">5</a></li>
+							<li><a href="shop.php">Last Page</a></li>
+						</ul><!--pagination ends -->
+					</center><!--center ends -->
+
 			</div><!-- col md 9 ends -->
 	</div><!-- container ends -->
 </div><!-- content ends -->
