@@ -337,20 +337,10 @@
 	</div><!--row ends -->
 </div><!--container ends -->
 
+<?php
+include ("includes/footer.php")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
 
 
 <script src="js/jquery.min.js"></script>
