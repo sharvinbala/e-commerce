@@ -79,7 +79,7 @@
 
 					<ul class="nav navbar-nav navbar-left"><!--nav navbar-nav navbar-left starts -->
 
-						<li>
+						<li class="active">
 							<a href="index.php">Home</a>
 						</li>
 
@@ -95,7 +95,7 @@
 							<a href="cart.php">Shopping Cart</a>
 						</li>
 
-						<li class="active">
+						<li>
 							<a href="contact.php">Contact Us</a>
 						</li>
 
@@ -148,7 +148,7 @@
 					<a href="index.php">Home</a>
 				</li>
 				<li>
-					<a href="index.php">Contact Us</a> <!-- change which page are you at here -->
+					<a href="index.php">Sign Up</a> <!-- change which page are you at here -->
 				</li>
 			</ul><!-- breadcrumb starts -->
 		</div><!-- col md 12 ends -->
@@ -163,32 +163,51 @@
 	<div class="box"><!-- box starts -->
 		<div class="box-header"><!-- box header starts-->
 			<center><!-- center starts-->
-				<h2>Contact Us</h2>
-					<p class="text-muted">
-						Feel free to contact us regarding our company or products.
-					</p>
+				<h2>Sign up for a new account</h2>
 			</center><!-- center ends -->
 		</div><!-- box header ends -->
-		<form action="contact.php" method="post"><!-- form starts -->
+		<form action="customer_register.php" method="post" enctype="multipart/form-data"><!-- form starts -->
 			<div class="form-group"><!-- form-group starts -->
 				<label>Name</label>
-				<input type="text" class="form-control" name="name" required>
+				<input type="text" class="form-control" name="c_name" required>
 			</div><!-- form-group ends -->
 			<div class="form-group"><!-- form-group starts -->
 				<label>Email</label>
-				<input type="text" class="form-control" name="email" required>
+				<input type="text" class="form-control" name="c_email" required>
 			</div><!-- form-group ends -->
 			<div class="form-group"><!-- form-group starts -->
-				<label>Subject</label>
-				<input type="text" class="form-control" name="subject" required>
+				<label>Password</label>
+				<input type="password" class="form-control" name="c_pass" required>
 			</div><!-- form-group ends -->
+
 			<div class="form-group"><!-- form-group starts -->
-				<label>Message</label>
-				<textarea type="text" class="form-control" name="message" required></textarea>
+				<label>Country</label>
+				<input type="text" class="form-control" name="c_country" required>
 			</div><!-- form-group ends -->
+
+			<div class="form-group"><!-- form-group starts -->
+				<label>City</label>
+				<input type="text" class="form-control" name="c_city" required>
+			</div><!-- form-group ends -->
+
+			<div class="form-group"><!-- form-group starts -->
+				<label>Contact</label>
+				<input type="text" class="form-control" name="c_contact" required>
+			</div><!-- form-group ends -->
+			
+			<div class="form-group"><!-- form-group starts -->
+				<label>Address</label>
+				<input type="text" class="form-control" name="c_address" required>
+			</div><!-- form-group ends -->
+
+			<div class="form-group"><!-- form-group starts -->
+				<label>Profile Picture</label>
+				<input type="file" class="form-control" name="c_image" required>
+			</div><!-- form-group ends -->
+
 			<div class="text-center"><!-- text-center starts -->
-				<button type="submit" name="submit" class="btn btn-primary">
-					<i class="fa fa-user-md"></i> Send Message
+				<button type="submit" name="register" class="btn btn-primary">
+					<i class="fa fa-user-md"></i> Register
 				</button>
 			</div><!-- text-center ends -->
 		</form><!-- form ends -->
