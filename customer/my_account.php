@@ -159,6 +159,16 @@
 			?>
 		</div><!-- col md 3 ends -->
 
+<div class="col-md-9"><!--col-md- starts -->
+	<div class="box"><!--box starts -->
+		<?php
+			if(isset($_GET['my_orders']))
+			{
+				include("my_orders.php");
+			}
+		?>
+	</div><!--box ends -->
+</div><!--col-md- ends -->		
 
 
 
