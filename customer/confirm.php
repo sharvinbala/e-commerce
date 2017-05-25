@@ -159,46 +159,64 @@
 			?>
 		</div><!-- col md 3 ends -->
 
-<div class="col-md-9"><!--col-md 9- starts -->
-	<div class="box"><!--box starts -->
-		<?php
-			if(isset($_GET['my_orders']))
-			{
-				include("my_orders.php");
-			}
 
-			if(isset($_GET['pay_offline']))
-			{
-				include ("pay_offline.php");
-			}
+<div class="col-md-9"><!-- col md 9 starts -->
+	<div class="box"><!-- box starts -->
+		<h1 align="center">Please Confirm Your Payment</h1>
+			<form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form starts -->
+				<div class="form-group"><!-- form-group starts -->
+					<label>Invoice Number</label>
+					<input type="text" class="form-control" name="invoice_no" required>
+				</div><!-- form-group ends -->
+			</form><!--form ends -->
 
-			if(isset($_GET['edit_account']))
-			{
-				include("edit_account.php");
-			}
+				<div class="form-group"><!-- form-group starts -->
+					<label>Invoice Number</label>
+					<input type="text" class="form-control" name="invoice_no" required>
+				</div><!-- form-group ends -->
+			</form><!--form ends -->
 
-			if(isset($_GET['change_password']))
-			{
-				include("change_password.php");
-			}
+				<div class="form-group"><!-- form-group starts -->
+					<label>Amount Sent</label>
+					<input type="text" class="form-control" name="amount_sent" required>
+				</div><!-- form-group ends -->
+			</form><!--form ends -->
 
-			if(isset($_GET['delete_account']))
-			{
-				include("delete_account.php");
-			}
+				<div class="form-group"><!-- form-group starts -->
+					<label>Select Payment Mode</label>
+					<select name="payment_mode" class="form-control"><!-- select starts -->
+						<option>Select Payment Mode</option>
+						<option>Deposit Receipt Number</option>
+						<option>Western Union Number</option>
+					</select><!-- select ends -->
+				</div><!-- form-group ends -->
+			</form><!--form ends -->
 
-		?>
-	</div><!--box ends -->
-</div><!--col-md- ends -->		
+			<form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form starts -->
+				<div class="form-group"><!-- form-group starts -->
+					<label>Transaction/Reference ID</label>
+					<input type="text" class="form-control" name="invoice_no" required>
+				</div><!-- form-group ends -->
+			</form><!--form ends -->
+
+			<form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form starts -->
+				<div class="form-group"><!-- form-group starts -->
+					<label>Payment Date</label>
+					<input type="text" class="form-control" name="date" required>
+				</div><!-- form-group ends -->
+
+				<div class="text-center"><!--text center starts -->
+					<button type="submit" name="confirm_payment" class="btn btn-primary btn-lg">
+						<i class="fa fa-user-md"></i> Confirm Payment
+					</button>
+				</div><!--text center ends -->
+
+			</form><!--form ends -->
+	</div><!-- boxends -->
+</div><!-- col md 9 ends -->
 
 
-
-
-
-
-
-
-		</div><!-- container ends -->
+</div><!-- container ends -->
 	</div><!-- content ends -->
 	<!--content till here -->
 	<?php
