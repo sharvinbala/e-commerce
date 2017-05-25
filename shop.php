@@ -295,18 +295,16 @@
 					</center><!--center ends -->
 
 			</div><!-- col md 9 ends -->
-	</div><!-- container ends -->
-</div><!-- content ends -->
 
+			<!--Footer starts officially -->
+		</div><!-- container ends -->
+	</div><!-- content ends -->
+	<!--content till here -->
+	<?php
+	include ("includes/footer.php")
+	?>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
-
-
-<!--content till here -->
-<?php
-include ("includes/footer.php")
-?>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-</body>
-</html>
+	</body>
+	</html>
