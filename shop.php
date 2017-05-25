@@ -158,7 +158,7 @@
 				include("includes/sidebar.php");
 			?>
 		</div><!-- col md 3 ends -->
-
+		<!--copy till here -->
 			<div class="col-md-9"><!-- col md 9 starts -->
 				<div class="box"><!-- box starts -->
 					<h1>Shop</h1>
