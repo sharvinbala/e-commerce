@@ -217,10 +217,107 @@
 									</select>	
 								</div><!--col-md-7 ends -->
 						</div><!--form-group ends -->
-					</form>
+						<p class="price">RM 50</p> 
+							<p class="text-center buttons"><!--text-center buttons starts -->
+								<button class="btn btn-primary" type=submit>
+									<i class="fa fa-shopping-cart"></i>Add To Cart
+								</button>
+							</p><!--text-center buttons ends -->
+					</form> <!--form horizontal ends -->
 			</div><!--box ends -->
+
+			<div class="row" id="thumbs"><!--thumbs starts -->
+				<div class="col-xs-4"><!--col xs 4 starts -->
+					<a href="#" class="thumb">
+						<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+					</a>
+				</div><!--col xs 4 ends -->
+
+				<div class="col-xs-4"><!--col xs 4 starts -->
+					<a href="#" class="thumb">
+						<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+					</a>
+				</div><!--col xs 4 ends -->
+
+				<div class="col-xs-4"><!--col xs 4 starts -->
+					<a href="#" class="thumb">
+						<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+					</a>
+				</div><!--col xs 4 ends -->				
+
+			</div><!--thumbs ends -->
 		</div><!--col-sm-6 ends -->
 	</div><!--row ends -->
+
+	<div class="box" id="details"><!--box details ends -->
+		<p><!--p ends -->
+			<h4>Product Details</h4>
+			<p>
+				Product Code: BDS-254-Premium
+
+				Packing: 100 sets
+
+				Contents:
+			<ol>
+				<li>1pc Hard Tray</li>
+				<li>2pcs Forceps</li>
+				<li>5pcs Cotton Balls</li>
+				<li>4pcs Gauze Swabs</li>
+				<li>1pc Limpet Bag</li>
+				<li>1pc Hand Towel</li>
+				<li>1pc 450mm Patient Drape</li>
+				<li>1pc 450mm Sterile Field</li>
+			</ol>
+			</p>
+
+		</p><!--p ends -->
+		<hr>
+	</div><!--box details ends -->
+
+	<div id="row same-height-row"><!--row same-height-row ends -->
+		<div class="col-md-3 col-sm-6"><!--col-md-3 col-sm-6 stards -->
+			<div class="box same-height headline"><!--box same-height headline stards -->
+				<h3 class="text-center">You may also like these products.</h3>
+			</div><!--box same-height headline ends -->
+		</div><!--col-md-3 col-sm-6 ends -->
+
+		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+			<div class="product same-height"><!--product same-height starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/dental examination set.jpg" class="img-responsive">
+				</a>
+					<div class="text"><!--text starts -->
+						<h3><a href="details.php">Dental Examination Set</a></h3>
+						<p class="price">RM 50</p>
+					</div><!--text ends -->
+			</div><!--product same-height ends -->
+		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+
+		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+			<div class="product same-height"><!--product same-height starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+				</a>
+					<div class="text"><!--text starts -->
+						<h3><a href="details.php">Basic Disposable Set 254</a></h3>
+						<p class="price">RM 50</p>
+					</div><!--text ends -->
+			</div><!--product same-height ends -->
+		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+
+		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+			<div class="product same-height"><!--product same-height starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/wound dressing.jpg" class="img-responsive">
+				</a>
+					<div class="text"><!--text starts -->
+						<h3><a href="details.php">Wound Dressing Set</a></h3>
+						<p class="price">RM 50</p>
+					</div><!--text ends -->
+			</div><!--product same-height ends -->
+		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+
+	</div><!--row same-height-row ends -->
 </div><!--col-md-9 ends -->
 
 	</div><!-- container ends -->
