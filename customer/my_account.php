@@ -25,25 +25,25 @@
 				<div class="col-md-6"> <!--col-md-6 starts -->
 				<ul class="menu"><!--menu starts -->
 					<li>
-						<a href="customer_register.php">
+						<a href="../customer_register.php">
 							Register
 						</a>
 					</li>
 
 					<li>
-						<a href="checkout.php">
+						<a href="my_account.php">
 							My Account
 						</a>
 					</li>
 
 					<li>
-						<a href="cart.php">
+						<a href="../cart.php">
 							Go To Cart
 						</a>
 					</li>
 
 					<li>
-						<a href="checkout.php">
+						<a href="../checkout.php">
 							Login
 						</a>
 					</li>
@@ -80,23 +80,23 @@
 					<ul class="nav navbar-nav navbar-left"><!--nav navbar-nav navbar-left starts -->
 
 						<li>
-							<a href="index.php">Home</a>
+							<a href="../index.php">Home</a>
 						</li>
 
 						<li >
-							<a href="shop.php">Shop</a>
+							<a href="../shop.php">Shop</a>
 						</li>
 
 						<li class="active">
-							<a href="checkout.php">My Account</a>
+							<a href="my_account.php">My Account</a>
 						</li>
 
 						<li>
-							<a href="cart.php">Shopping Cart</a>
+							<a href="../cart.php">Shopping Cart</a>
 						</li>
 
 						<li>
-							<a href="contact.php">Contact Us</a>
+							<a href="../contact.php">Contact Us</a>
 						</li>
 
 					</ul><!--nav navbar-nav navbar-left ends -->
@@ -145,10 +145,10 @@
 		<div class="col-md-12"><!-- col md 12 starts -->
 			<ul class="breadcrumb"><!-- breadcrumb starts -->
 				<li>
-					<a href="index.php">Home</a>
+					<a href="../index.php">Home</a>
 				</li>
 				<li>
-					<a href="index.php">My Account</a>
+					<a href="../index.php">My Account</a>
 				</li>
 			</ul><!-- breadcrumb starts -->
 		</div><!-- col md 12 ends -->
