@@ -408,12 +408,16 @@ breadcrumb > li + li:before
 #content .headerline
 {
 	height: 350px;
-	
+
 }
 
+/* cart page styles */
 
+#content #cart .table tbody tr td img 
+{
+	width: 50px;
 
-
+}
 
 
 

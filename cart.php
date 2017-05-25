@@ -152,20 +152,171 @@
 				</li>
 			</ul><!-- breadcrumb starts -->
 		</div><!-- col md 12 ends -->
-
-
 		<div class="col-md-9" id="cart"><!-- col md 9 start -->
 			<div class="box"><!-- box start -->
 				<form action="cart.php" method="post" enctype="multipart-form-data"><!--form starts -->
 					<h1>Shopping Cart</h1>
 					<p class="text-muted">You currently have 4 items in your cart.</p>
 						<div class="table-responsive"><!--table responsive starts -->
-							
+							<table class="table"><!--table starts -->
+								<thead><!-- thead starts -->
+									<tr>
+										<th colspan="2">Product</th>
+										<th>Quantity</th>
+										<th>Unit Price</th>										
+										<th colspan="1">Delete</th>
+										<th colspan="2">Sub Total</th>
+									</tr>
+								</thead><!-- thead ends -->
+									<tbody><!--tbody starts -->
+										<tr><!--tr starts -->
+											<td>
+												<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
+											</td>
+											<td>
+												<a href="#">Basic Disposable Set 254</a>
+											</td>	
+											<td>
+												2
+											</td>
+											<td>
+												RM 50.00
+											</td>		
+											 <td>
+												<input type="checkbox" name="remove[]">
+											</td>								
+											<td>
+												<a href="#">RM 100.00</a>
+											</td>
+										</tr><!--tr ends -->
+										<tr><!--tr starts -->
+											<td>
+												<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
+											</td>
+											<td>
+												<a href="#">Basic Disposable Set 254</a>
+											</td>	
+											<td>
+												2
+											</td>
+											<td>
+												RM 50.00
+											</td>		
+											 <td>
+												<input type="checkbox" name="remove[]">
+											</td>								
+											<td>
+												<a href="#">RM 100.00</a>
+											</td>
+										</tr><!--tr ends -->
+
+									</tbody><!--tbody ends -->
+									<tfoot><!--tfoot starts -->
+										<tr>
+											<th colspan="5">Total</th>
+											<th colspan="2">RM 100</th>
+										</tr>
+									</tfoot><!--tfoot ends -->
+							</table><!--table ends -->
 						</div><!--table responsive ends -->
+
+						<div class="box-footer"><!--box-footer starts -->
+							<div class="pull-left"><!--pull-left starts -->
+								<a href="index.php" class="btn btn-default">
+									<i class="fa fa-chevron-left"></i> Continue Shopping
+								</a>
+							</div><!--pull left ends	 -->
+								<div class="pull-right"><!--pull-right starts -->
+									<button class="btn btn-default" type="submit" name="update" value="Update Cart">
+										<i class="fa fa-refresh"></i> Update Cart
+									</button>
+
+<a href="checkout.php" class="btn btn-primary">
+Proceed To Checkout <i class="fa fa-chevron-right"></i>
+</a>									
+
+								</div><!--pull-right starts -->
+						</div><!--box-footer ends -->
 				</form><!--form ends -->
 			</div><!-- box ends -->
+
+			<div id="row same-height-row"><!--row same-height-row ends -->
+		<div class="col-md-3 col-sm-6"><!--col-md-3 col-sm-6 stards -->
+			<div class="box same-height headline"><!--box same-height headline stards -->
+				<h3 class="text-center">You may also like these products.</h3>
+			</div><!--box same-height headline ends -->
+		</div><!--col-md-3 col-sm-6 ends -->
+
+		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+			<div class="product same-height"><!--product same-height starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/dental examination set.jpg" class="img-responsive">
+				</a>
+					<div class="text"><!--text starts -->
+						<h3><a href="details.php">Dental Examination Set</a></h3>
+						<p class="price">RM 50</p>
+					</div><!--text ends -->
+			</div><!--product same-height ends -->
+		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+
+		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+			<div class="product same-height"><!--product same-height starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+				</a>
+					<div class="text"><!--text starts -->
+						<h3><a href="details.php">Basic Disposable Set 254</a></h3>
+						<p class="price">RM 50</p>
+					</div><!--text ends -->
+			</div><!--product same-height ends -->
+		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+
+		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+			<div class="product same-height"><!--product same-height starts -->
+				<a href="details.php">
+					<img src="admin_area/product_images/wound dressing.jpg" class="img-responsive">
+				</a>
+					<div class="text"><!--text starts -->
+						<h3><a href="details.php">Wound Dressing Set</a></h3>
+						<p class="price">RM 50</p>
+					</div><!--text ends -->
+			</div><!--product same-height ends -->
+		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+	</div><!--row same-height-row ends -->
 		</div><!-- col-md 9 ends -->
 
+		<div class="col-md-3"><!--col md 3 starts -->
+			<div class="box" id="order-summary"><!--box starts -->
+				<div class="box-header"><!--box header starts -->
+					<h3>Order Summary</h3>
+				</div><!--box-header ends -->
+					<p class="text-muted">
+						Shipping & additional costs are calculated based on the value you have entered.
+					</p>
+				<div class="table-responsive"><!--table responsive starts -->
+					<table class="table"><!--table starts -->
+						<tbody>
+							<tr>
+								<td>Order Subtotal</td>	
+								<th>RM 100.00</th>
+							</tr>
+							<tr>
+								<td>Shipping & Handling</td>
+								<td>RM 0.00</td>
+							</tr>
+							<tr>
+								<td>Tax</td>
+								<th>RM 0.00</th>
+							</tr>
+							<tr class="total">
+								<td>Total</td>
+								<th>RM 100.00</th>
+							</tr>
+						</tbody>
+					</table><!--table ends -->
+				</div><!--table responsive ends -->
+			</div><!--box ends -->
+		</div><!--col md 3 ends -->
 
 		<!--Footer starts officially -->
 		</div><!-- container ends -->
