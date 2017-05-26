@@ -1,3 +1,5 @@
+<?php include ("includes/db.php"); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -149,20 +151,23 @@
 				<li data-target="#myCarousel" data-slide-to="3"</li>
 			</ol> <!-- carousel indicators ends -->
 
-				<div class="carousel-inner"><!-- carousel inner starts -->
-					<div class="item active">
-						<img src="admin_area/slides_images/banner 1.jpg">
-					</div>
+<div class="carousel-inner"><!-- carousel inner starts -->
+<?php						
+	$get_slides = "SELECT * FROM slider LIMIT 0,1";
+	$run_slides = mysqli_query($con, $get_slides);
 
-					<div class="item">
-						<img src="admin_area/slides_images/banner 2.jpg">
-					</div>
+	while($row_slides=mysqli_fetch_array($run_slides))
+	{
+		$slide_name = $row_slides['slide_name'];
+		$slide_image = $row_slides['slide_image'];
 
-					<div class="item">
-						<img src="admin_area/slides_images/banner 3.jpg">
-					</div>	
-
-				</div><!-- carousel inner ends -->
+		echo "
+		<div class='item active'>
+			<img src='admin_area/slides_images/$slide_image'
+		";
+	}
+?>
+</div><!-- carousel inner ends -->
 
 				<a class="left carousel-control" href="#myCarousel" data-slide="prev"><!--left carousel control starts -->
 					<span class="glyphicon glyphicon-chevron-left"></span>
