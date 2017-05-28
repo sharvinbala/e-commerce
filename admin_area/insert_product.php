@@ -132,7 +132,7 @@
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Product Price</label>
+			<label class="col-md-3 control-label"></label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<input type="submit" name="submit" value="Insert Product" class="btn btn-primary form-control">
 				</div><!--col md 6 ends -->
@@ -161,9 +161,9 @@
 		$product_keywords = $_POST['product_keywords'];
 		$product_title = $_POST['product_title'];
 
-		$produce_img1 = $_FILES['produce_img1']['name'];
-		$produce_img2 = $_FILES['produce_img2']['name'];
-		$produce_img3 = $_FILES['produce_img3']['name'];
+		$product_img1 = $_FILES['product_img1']['name'];
+		$product_img2 = $_FILES['product_img2']['name'];
+		$product_img3 = $_FILES['product_img3']['name'];
 
 		$temp_name1 = $_FILES['product_img1']['tmp_name'];
 		$temp_name2 = $_FILES['product_img2']['tmp_name'];
@@ -172,6 +172,19 @@
 		move_uploaded_file($temp_name1, "product_images/$product_img1");
 		move_uploaded_file($temp_name2, "product_images/$product_img2");
 		move_uploaded_file($temp_name3, "product_images/$product_img3");
+
+		$insert_product = "INSERT INTO products (p_cat_id, cat_id, date, product_title,
+			product_img1, product_img2, product_img3,product_price, product_desc, product_keywords) 
+			values ('$product_cat','$cat', NOW(),'$product_title','$product_img1','$product_img2','$product_img3',
+			'$product_price', '$product_desc', '$product_keywords')";
+
+			$run_product = mysqli_query($con, $insert_product);
+
+			if($run_product)
+			{
+				echo "<script>alert('Product has been inserted successfully');</script>";
+				echo "<script>alert('window.open('insert_product.php', '_self')');</script>";
+			}
 	}
 
 ?>
