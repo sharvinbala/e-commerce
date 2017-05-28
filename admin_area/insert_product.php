@@ -5,6 +5,8 @@
 		<title>Insert Products</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  		  <script>tinymce.init({ selector:'textarea' });</script>
 	</head>
 
 	<body>
@@ -63,37 +65,76 @@
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Products Title</label>
+			<label class="col-md-3 control-label">Category</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_title" class="form-control" required> 
+					<select name="cat" class="form-control">
+						<option>Select a category</option>
+<?php
+			$get_cat= "SELECT * FROM categories";
+			$run_cat = mysqli_query($con, $get_cat);
+
+			while($row_cat=mysqli_fetch_array($run_cat))
+			{
+				$cat_id = $row_cat['cat_id'];
+				$cat_title = $row_cat['cat_title'];
+
+				echo "
+					<option value='$cat_id'> $cat_title</option>
+				";
+
+			}
+
+		?>
+					</select>
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Products Title</label>
+			<label class="col-md-3 control-label">Product Image 1</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_title" class="form-control" required> 
+					<input type="file" name="product_img1" class="form-control" required> 
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Products Title</label>
+			<label class="col-md-3 control-label">Product Image 2</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_title" class="form-control" required> 
+					<input type="file" name="product_img2" class="form-control" required> 
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Products Title</label>
+			<label class="col-md-3 control-label">Product Image 3</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_title" class="form-control" required> 
+					<input type="file" name="product_img3" class="form-control" required> 
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Products Title</label>
+			<label class="col-md-3 control-label">Product Price</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_title" class="form-control" required> 
+					<input type="text" name="product_price" class="form-control" required> 
+				</div><!--col md 6 ends -->
+		</div><!--form-group ends -->
+
+		<div class="form-group"><!--form-group starts -->
+			<label class="col-md-3 control-label">Product Keywords</label>
+				<div class="col-md-6"><!--col md 6 starts -->
+					<input type="text" name="product_keywords" class="form-control" required> 
+				</div><!--col md 6 ends -->
+		</div><!--form-group ends -->
+
+		<div class="form-group"><!--form-group starts -->
+			<label class="col-md-3 control-label">Product Description</label>
+				<div class="col-md-6"><!--col md 6 starts -->
+					<textarea name="product_desc" class="form-control" rows="6" cols="19"></textarea>
+				</div><!--col md 6 ends -->
+		</div><!--form-group ends -->
+
+		<div class="form-group"><!--form-group starts -->
+			<label class="col-md-3 control-label">Product Price</label>
+				<div class="col-md-6"><!--col md 6 starts -->
+					<input type="submit" name="submit" value="Insert Product" class="btn btn-primary form-control">
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
