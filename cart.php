@@ -159,7 +159,13 @@
 			<div class="box"><!-- box start -->
 				<form action="cart.php" method="post" enctype="multipart-form-data"><!--form starts -->
 					<h1>Shopping Cart</h1>
-					<p class="text-muted">You currently have 4 items in your cart.</p>
+					<?php
+						$ip_add = getRealUserIp();
+						$select_cart = "select * from cart where ip_add='$ip_add'";
+						$run_cart = mysqli_query($con, $select_cart);
+						$count = mysqli_num_rows($run_cart);
+					?>
+					<p class="text-muted">You currently have <?php echo $count; ?> items in your cart.</p>
 						<div class="table-responsive"><!--table responsive starts -->
 							<table class="table"><!--table starts -->
 								<thead><!-- thead starts -->
@@ -172,52 +178,54 @@
 									</tr>
 								</thead><!-- thead ends -->
 									<tbody><!--tbody starts -->
+
+										<?php
+											$total = 0;
+											while ($row_cart=mysqli_fetch_array($run_cart)) {
+											$pro_id = $row_cart['p_id'];											
+											$pro_qty = $row_cart['qty'];
+											$get_products = "select * from products where product_id='$pro_id'";
+											$run_products = mysqli_query($con, $get_products);
+
+											while ($row_products = mysqli_fetch_array($run_products)) {
+												$product_title = $row_products['product_title'];
+												$product_img1 = $row_products['product_img1'];
+												$only_price = $row_products['product_price'];
+												$sub_total = $row_products['product_price'] * $pro_qty;
+												$total += $sub_total;
+										?>
+
 										<tr><!--tr starts -->
 											<td>
-												<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
+												<img src="admin_area/product_images/<?php echo $product_img1; ?>" class="img-responsive">
 											</td>
 											<td>
-												<a href="#">Basic Disposable Set 254</a>
+												<a href="#"><?php echo $product_title; ?></a>
 											</td>	
 											<td>
-												2
+												<?php echo $pro_qty; ?>
 											</td>
 											<td>
-												RM 50.00
+												RM <?php echo $only_price; ?>
 											</td>		
 											 <td>
-												<input type="checkbox" name="remove[]">
+												<input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
 											</td>								
 											<td>
-												<a href="#">RM 100.00</a>
+												RM <?php echo $sub_total; ?>
 											</td>
 										</tr><!--tr ends -->
-										<tr><!--tr starts -->
-											<td>
-												<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-											</td>
-											<td>
-												<a href="#">Basic Disposable Set 254</a>
-											</td>	
-											<td>
-												2
-											</td>
-											<td>
-												RM 50.00
-											</td>		
-											 <td>
-												<input type="checkbox" name="remove[]">
-											</td>								
-											<td>
-												<a href="#">RM 100.00</a>
-											</td>
-										</tr><!--tr ends -->
+										<?php 
+									}
+										} 
+
+										?>
 
 									</tbody><!--tbody ends -->
 									<tfoot><!--tfoot starts -->
 										<tr>
 											<th colspan="5">Total</th>
-											<th colspan="2">RM 100</th>
+											<th colspan="2">RM <?php echo $total; ?></th>
 										</tr>
 									</tfoot><!--tfoot ends -->
 							</table><!--table ends -->
