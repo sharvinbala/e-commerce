@@ -207,18 +207,18 @@ if(isset($_GET['pro_id']))
 						<div class="carousel-inner"><!--carousel inner starts -->
 							<div class="item active"><!--item active ends -->
 								<center>
-									<img src="admin_area/product_images/cat set.jpg" class="img-responsive">	
+									<img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">	
 								</center>
 							</div><!--item active ends -->
 								<div class="item"><!--item active ends -->
 								<center>
-									<img src="admin_area/product_images/dental examination set.jpg" class="img-responsive">	
+									<img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">	
 								</center>
 							</div>
 
 							<div class="item"><!--item active ends -->
 								<center>
-									<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">	
+									<img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">	
 								</center>
 							</div>							
 
@@ -238,8 +238,8 @@ if(isset($_GET['pro_id']))
 
 		<div class="col-sm-6"><!--col-sm-6 starts -->
 			<div class="box"><!--box starts -->
-				<h1 class="text-center">Basic Disposable Set</h1>
-					<form action="details.php" method="post" class="form-horizontal">
+				<h1 class="text-center"><?php echo $pro_title; ?></h1>
+					<form action="index.php?add_cart=<?php echo $product_id; ?>" method="post" class="form-horizontal">
 						<div class="form-group"> <!--form-group starts -->
 							<label class="col-md-5 control-label">Product Quantity</label>
 								<div class="col-md-7"><!--col-md-7 starts -->
@@ -252,7 +252,7 @@ if(isset($_GET['pro_id']))
 									</select>	
 								</div><!--col-md-7 ends -->
 						</div><!--form-group ends -->
-						<p class="price">RM 50</p> 
+						<p class="price">RM <?php echo $pro_price; ?></p> 
 							<p class="text-center buttons"><!--text-center buttons starts -->
 								<button class="btn btn-primary" type=submit>
 									<i class="fa fa-shopping-cart"></i>Add To Cart
@@ -264,19 +264,19 @@ if(isset($_GET['pro_id']))
 			<div class="row" id="thumbs"><!--thumbs starts -->
 				<div class="col-xs-4"><!--col xs 4 starts -->
 					<a href="#" class="thumb">
-						<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+						<img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">
 					</a>
 				</div><!--col xs 4 ends -->
 
 				<div class="col-xs-4"><!--col xs 4 starts -->
 					<a href="#" class="thumb">
-						<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+						<img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">
 					</a>
 				</div><!--col xs 4 ends -->
 
 				<div class="col-xs-4"><!--col xs 4 starts -->
 					<a href="#" class="thumb">
-						<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
+						<img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">
 					</a>
 				</div><!--col xs 4 ends -->				
 
