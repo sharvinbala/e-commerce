@@ -277,42 +277,45 @@ echo @$up_cart = update_cart();
 			<h3 class="text-center">You may also like these products.</h3>
 		</div><!--box same-height headline ends -->
 	</div><!--col-md-3 col-sm-6 ends -->
+<?php
+$get_products = "select * from products order by rand() LIMIT 0,3";
+$run_products = mysqli_query($con, $get_products);
+while ($row_products=mysqli_fetch_array($run_products)) {
+	$pro_id = $row_products['product_id'];
+	$pro_title = $row_products['product_title'];
+	$pro_price = $row_products['product_price'];
+	$pro_img1 = $row_products['product_img1'];
+	
+	echo "
 
-	<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-		<div class="product same-height"><!--product same-height starts -->
-			<a href="details.php">
-					<img src="admin_area/product_images/dental examination set.jpg" class="img-responsive">
-				</a>
-					<div class="text"><!--text starts -->
-						<h3><a href="details.php">Dental Examination Set</a></h3>
-						<p class="price">RM 50</p>
-					</div><!--text ends -->
-			</div><!--product same-height ends -->
-		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+<div class='center-responsive col-md-3 col-sm-6 ' >
 
-		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-			<div class="product same-height"><!--product same-height starts -->
-				<a href="details.php">
-					<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
-				</a>
-					<div class="text"><!--text starts -->
-						<h3><a href="details.php">Basic Disposable Set 254</a></h3>
-						<p class="price">RM 50</p>
-					</div><!--text ends -->
-			</div><!--product same-height ends -->
-		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+<div class='product same-height' >
 
-		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-			<div class="product same-height"><!--product same-height starts -->
-				<a href="details.php">
-					<img src="admin_area/product_images/wound dressing.jpg" class="img-responsive">
-				</a>
-					<div class="text"><!--text starts -->
-						<h3><a href="details.php">Wound Dressing Set</a></h3>
-						<p class="price">RM 50</p>
-					</div><!--text ends -->
-			</div><!--product same-height ends -->
-		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+<a href='details.php?pro_id=$pro_id' >
+
+<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
+
+</a>
+
+<div class='text' >
+
+<h3><a href='details.php?pro_id=$pro_id' >$pro_title</a></h3>
+
+<p class='price' >RM $pro_price</p>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+";
+}
+?>
+	
 	</div><!--row same-height-row ends -->
 		</div><!-- col-md 9 ends -->
 
@@ -329,7 +332,7 @@ echo @$up_cart = update_cart();
 						<tbody>
 							<tr>
 								<td>Order Subtotal</td>	
-								<th>RM 100.00</th>
+								<th>RM <?php echo $total; ?>.00</th>
 							</tr>
 							<tr>
 								<td>Shipping & Handling</td>
@@ -341,7 +344,7 @@ echo @$up_cart = update_cart();
 							</tr>
 							<tr class="total">
 								<td>Total</td>
-								<th>RM 100.00</th>
+								<th>RM <?php echo $total; ?>.00</th>
 							</tr>
 						</tbody>
 					</table><!--table ends -->
