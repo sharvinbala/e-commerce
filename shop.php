@@ -242,7 +242,7 @@
 							for ($i=1;$i<=$total_pages;$i++) { 
 								echo "
 								<li><a href='shop.php?page=".$i."'>".$i."</a></li>
-									
+
 								";
 							};
 
@@ -256,6 +256,8 @@
 
 						</ul><!--pagination ends -->
 					</center><!--center ends -->
+					
+						<?php getpcatpro();	?>					
 
 			</div><!-- col md 9 ends -->
 
