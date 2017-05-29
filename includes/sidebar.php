@@ -4,11 +4,7 @@
 	</div><!--panel heading ends -->
 		<div class="panel-body"><!--panel body starts -->
 			<ul class="nav nav-pills nav-stacked category-menu">
-				<li><a href="shop.php">Basic Disposable Sets</a></li>
-				<li><a href="shop.php">Surgery Sets</a></li>
-				<li><a href="shop.php">Dental Sets</a></li>
-				<li><a href="shop.php">Paedatric Sets</a></li>
-				<li><a href="shop.php">Anaesthetic Sets</a></li>
+				<?php getPCats(); ?>
 			</ul>
 		</div><!--panel heading ends -->
 </div><!--panel panel-default sidebar-menu ends -->
@@ -19,11 +15,7 @@
 	</div><!--panel heading ends -->
 		<div class="panel-body"><!--panel body starts -->
 			<ul class="nav nav-pills nav-stacked category-menu">
-				<li><a href="shop.php">Basic Disposable Sets</a></li>
-				<li><a href="shop.php">Procedural Disposable</a></li>
-				<li><a href="shop.php">Disposable Consumable</a></li>
-				<li><a href="shop.php">Paedatric Sets</a></li>
-				<li><a href="shop.php">Clinical Waste Handling</a></li>
+				<?php getCats(); ?>
 			</ul>
 		</div><!--panel heading ends -->
 </div><!--panel panel-default sidebar-menu ends -->

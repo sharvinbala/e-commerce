@@ -22,10 +22,18 @@
 			<div class="col-md-3 col-sm-6"><!--col-md-3 col-sm-6 starts -->
 				<h4>Top Products Categories</h4>
 					<ul><!--ul starts -->
-						<li><a href="#">Basic Disposable Sets</a></li>
-						<li><a href="#">Surgery Sets</a></li>
-						<li><a href="#">Paedatric Sets</a></li>
-						<li><a href="#">Dental Sets</a></li>					
+						<?php
+							$get_p_cats = "select * from product_categories";
+							$run_p_cats = mysqli_query($con, $get_p_cats);
+
+							while ($row_p_cats = mysqli_fetch_array($run_p_cats)) {
+								$p_cat_id = $row_p_cats['p_cat_id'];
+								$p_cat_title = $row_p_cats['p_cat_title'];
+								echo "
+									<li><a href='shop.php?p_cat=$p_cat_id'> $p_cat_title</a></li>
+								";
+							}
+						?>				
 					</ul><!--ul ends -->
 						<hr class="hidden-md hidden-lg">
 

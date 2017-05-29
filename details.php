@@ -1,3 +1,6 @@
+<?php include ("includes/db.php"); ?>
+<?php include ("functions/function.php"); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
