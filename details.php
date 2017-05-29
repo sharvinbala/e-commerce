@@ -285,26 +285,12 @@ if(isset($_GET['pro_id']))
 	</div><!--row ends -->
 
 	<div class="box" id="details"><!--box details ends -->
-		<p><!--p ends -->
+		<p><!--p starts -->
 			<h4>Product Details</h4>
 			<p>
-				Product Code: BDS-254-Premium
-
-				Packing: 100 sets
-
-				Contents:
-			<ol>
-				<li>1pc Hard Tray</li>
-				<li>2pcs Forceps</li>
-				<li>5pcs Cotton Balls</li>
-				<li>4pcs Gauze Swabs</li>
-				<li>1pc Limpet Bag</li>
-				<li>1pc Hand Towel</li>
-				<li>1pc 450mm Patient Drape</li>
-				<li>1pc 450mm Sterile Field</li>
-			</ol>
+				<?php echo $pro_desc; ?>
+			
 			</p>
-
 		</p><!--p ends -->
 		<hr>
 	</div><!--box details ends -->
@@ -315,43 +301,32 @@ if(isset($_GET['pro_id']))
 				<h3 class="text-center">You may also like these products.</h3>
 			</div><!--box same-height headline ends -->
 		</div><!--col-md-3 col-sm-6 ends -->
+		<?php
+		$get_products = "select * from products order by rand() LIMIT 0,3";
+		$run_products = mysqli_query($con, $get_products);	
 
-		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-			<div class="product same-height"><!--product same-height starts -->
-				<a href="details.php">
-					<img src="admin_area/product_images/dental examination set.jpg" class="img-responsive">
-				</a>
-					<div class="text"><!--text starts -->
-						<h3><a href="details.php">Dental Examination Set</a></h3>
-						<p class="price">RM 50</p>
-					</div><!--text ends -->
-			</div><!--product same-height ends -->
-		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+		while ($row_products = mysqli_fetch_array($run_products)) {
+			$pro_id = $row_products['product_id'];
+			$pro_title = $row_products['product_title'];
+			$pro_price = $row_products['product_price'];
+			$pro_img1 = $row_products['product_img1'];
 
-		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-			<div class="product same-height"><!--product same-height starts -->
-				<a href="details.php">
-					<img src="admin_area/product_images/ofs1.jpg" class="img-responsive">
-				</a>
-					<div class="text"><!--text starts -->
-						<h3><a href="details.php">Basic Disposable Set 254</a></h3>
-						<p class="price">RM 50</p>
-					</div><!--text ends -->
-			</div><!--product same-height ends -->
-		</div><!--center-responsive col-md-3 col-sm-6 ends-->
+			echo "
+			<div class='center-responsive col-md-3 col-sm-6'>
+				<div class='product same-height'>
+					<a href='details.php?pro_id=$pro_id'>
+						<img src='admin_area/product_images/$pro_img1' class='img-responsive'>
+					</a>
+					<div class='text'>
+						<h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+						<p class='price'>RM $pro_price</p>
+					</div>
+				</div>
+			</div>
+			";
+		}
 
-		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-			<div class="product same-height"><!--product same-height starts -->
-				<a href="details.php">
-					<img src="admin_area/product_images/wound dressing.jpg" class="img-responsive">
-				</a>
-					<div class="text"><!--text starts -->
-						<h3><a href="details.php">Wound Dressing Set</a></h3>
-						<p class="price">RM 50</p>
-					</div><!--text ends -->
-			</div><!--product same-height ends -->
-		</div><!--center-responsive col-md-3 col-sm-6 ends-->
-
+		?>
 	</div><!--row same-height-row ends -->
 </div><!--col-md-9 ends -->
 
