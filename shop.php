@@ -163,137 +163,27 @@
 		</div><!-- col md 3 ends -->
 		<!--copy till here -->
 			<div class="col-md-9"><!-- col md 9 starts -->
-				<div class="box"><!-- box starts -->
-					<h1>Shop</h1>
-					<p>Browse through our products for good deals!</p>
-				</div><!-- box ends -->
+				<?php 
+					if(!isset($_GET['p_cat']))
+					{
+						if(!isset($_GET['cat']))
+						{
+							echo "
+								<div class='box'>	
+									<h1>Shop</h1>
+									<p>Explore our products at a great price!</p>
+								</div>	
+							";
+						}
+					}
+				?>
 					<div class="row"><!-- row starts -->
-						<div class="col-md-4 col-sm-6 center-responsive"><!-- center-responsive starts -->
-							<div class="product"><!-- product starts -->
-								<a href="details.php"></a>
-								<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-								<div class="text"><!-- text starts -->
-									<h3>
-										<a href="details.php">Catherization Set</a>
-									</h3>
-									<p class="price">RM 35</p>
-									<p class="buttons">
-										<a href="details.php" class="btn btn-default">View Details</a>
-										<a href="details.php" class="btn btn-primary">
-											<i class="fa fa-shopping-cart"></i>Add To Cart
-										</a>
-									</p>
-								</div><!-- text ends -->
-							</div><!-- product ends -->
-						</div><!-- center responsive ends -->
-
-
-						<div class="col-md-4 col-sm-6 center-responsive"><!-- center-responsive starts -->
-							<div class="product"><!-- product starts -->
-								<a href="details.php"></a>
-								<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-								<div class="text"><!-- text starts -->
-									<h3>
-										<a href="details.php">Catherization Set</a>
-									</h3>
-									<p class="price">RM 35</p>
-									<p class="buttons">
-										<a href="details.php" class="btn btn-default">View Details</a>
-										<a href="details.php" class="btn btn-primary">
-											<i class="fa fa-shopping-cart"></i>Add To Cart
-										</a>
-									</p>
-								</div><!-- text ends -->
-							</div><!-- product ends -->
-						</div><!-- center responsive ends -->
-
-						<div class="col-md-4 col-sm-6 center-responsive"><!-- center-responsive starts -->
-							<div class="product"><!-- product starts -->
-								<a href="details.php"></a>
-								<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-								<div class="text"><!-- text starts -->
-									<h3>
-										<a href="details.php">Catherization Set</a>
-									</h3>
-									<p class="price">RM 35</p>
-									<p class="buttons">
-										<a href="details.php" class="btn btn-default">View Details</a>
-										<a href="details.php" class="btn btn-primary">
-											<i class="fa fa-shopping-cart"></i>Add To Cart
-										</a>
-									</p>
-								</div><!-- text ends -->
-							</div><!-- product ends -->
-						</div><!-- center responsive ends -->
-
-						<div class="col-md-4 col-sm-6 center-responsive"><!-- center-responsive starts -->
-							<div class="product"><!-- product starts -->
-								<a href="details.php"></a>
-								<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-								<div class="text"><!-- text starts -->
-									<h3>
-										<a href="details.php">Catherization Set</a>
-									</h3>
-									<p class="price">RM 35</p>
-									<p class="buttons">
-										<a href="details.php" class="btn btn-default">View Details</a>
-										<a href="details.php" class="btn btn-primary">
-											<i class="fa fa-shopping-cart"></i>Add To Cart
-										</a>
-									</p>
-								</div><!-- text ends -->
-							</div><!-- product ends -->
-						</div><!-- center responsive ends -->
-
-						<div class="col-md-4 col-sm-6 center-responsive"><!-- center-responsive starts -->
-							<div class="product"><!-- product starts -->
-								<a href="details.php"></a>
-								<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-								<div class="text"><!-- text starts -->
-									<h3>
-										<a href="details.php">Catherization Set</a>
-									</h3>
-									<p class="price">RM 35</p>
-									<p class="buttons">
-										<a href="details.php" class="btn btn-default">View Details</a>
-										<a href="details.php" class="btn btn-primary">
-											<i class="fa fa-shopping-cart"></i>Add To Cart
-										</a>
-									</p>
-								</div><!-- text ends -->
-							</div><!-- product ends -->
-						</div><!-- center responsive ends -->
-
-						<div class="col-md-4 col-sm-6 center-responsive"><!-- center-responsive starts -->
-							<div class="product"><!-- product starts -->
-								<a href="details.php"></a>
-								<img src="admin_area/product_images/cat set.jpg" class="img-responsive">
-								<div class="text"><!-- text starts -->
-									<h3>
-										<a href="details.php">Catherization Set</a>
-									</h3>
-									<p class="price">RM 35</p>
-									<p class="buttons">
-										<a href="details.php" class="btn btn-default">View Details</a>
-										<a href="details.php" class="btn btn-primary">
-											<i class="fa fa-shopping-cart"></i>Add To Cart
-										</a>
-									</p>
-								</div><!-- text ends -->
-							</div><!-- product ends -->
-						</div><!-- center responsive ends -->
-
+						
 					</div><!-- row ends -->
 
 					<center><!--center starts -->
 						<ul class="pagination"><!--pagination starts -->
-							<li><a href="shop.php">First Page</a></li>
-							<li><a href="shop.php">1</a></li>
-							<li><a href="shop.php">2</a></li>
-							<li><a href="shop.php">3</a></li>
-							<li><a href="shop.php">4</a></li>
-							<li><a href="shop.php">5</a></li>
-							<li><a href="shop.php">First Page</a></li>
+							
 						</ul><!--pagination ends -->
 					</center><!--center ends -->
 
