@@ -239,11 +239,15 @@ if(isset($_GET['pro_id']))
 		<div class="col-sm-6"><!--col-sm-6 starts -->
 			<div class="box"><!--box starts -->
 				<h1 class="text-center"><?php echo $pro_title; ?></h1>
-					<form action="index.php?add_cart=<?php echo $product_id; ?>" method="post" class="form-horizontal">
+
+				<?php add_cart(); ?>
+
+					<form action="details.php?add_cart=<?php echo $product_id; ?>" method="post" class="form-horizontal">
 						<div class="form-group"> <!--form-group starts -->
 							<label class="col-md-5 control-label">Product Quantity</label>
 								<div class="col-md-7"><!--col-md-7 starts -->
 									<select name="product_qty" class="form-control">
+										<option>Select Quantity</option>
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
