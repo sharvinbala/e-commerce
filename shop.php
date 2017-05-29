@@ -257,7 +257,11 @@
 						</ul><!--pagination ends -->
 					</center><!--center ends -->
 					
-						<?php getpcatpro();	?>					
+						<?php 
+						getpcatpro();	
+						getcatpro();
+						
+						?>					
 
 			</div><!-- col md 9 ends -->
 
