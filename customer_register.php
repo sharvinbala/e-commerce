@@ -21,7 +21,7 @@
 			</a>
 
 			<a href="#">
-			Shopping Cart Total Price: RM 100, Total Items: <?php items(); ?>
+			Shopping Cart Total Price:<?php total_price(); ?>, Total Items: <?php items(); ?>
 			</a>
 
 				</div><!--col md 6 offer ends -->
