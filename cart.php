@@ -251,16 +251,36 @@ Proceed To Checkout <i class="fa fa-chevron-right"></i>
 				</form><!--form ends -->
 			</div><!-- box ends -->
 
-			<div id="row same-height-row"><!--row same-height-row ends -->
-		<div class="col-md-3 col-sm-6"><!--col-md-3 col-sm-6 stards -->
-			<div class="box same-height headline"><!--box same-height headline stards -->
-				<h3 class="text-center">You may also like these products.</h3>
-			</div><!--box same-height headline ends -->
-		</div><!--col-md-3 col-sm-6 ends -->
+			<?php 
+				function update_cart()
+				{
+					global $con;
+					if(isset($_POST['update']))
+					{
+						foreach ($_POST['remove'] as $remove_id) {
+							$delete_product = "delete from cart where p_id='$remove_id'";
+							$run_delete = mysqli_query($con, $delete_product);
+							if ($run_delete) {
+								echo "
+									<script>window.open('cart.php','_self')</script>
+								";
+							}
+						}
+					}
+				}
+echo @$up_cart = update_cart();
 
-		<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
-			<div class="product same-height"><!--product same-height starts -->
-				<a href="details.php">
+?>
+<div id="row same-height-row"><!--row same-height-row ends -->
+	<div class="col-md-3 col-sm-6"><!--col-md-3 col-sm-6 stards -->
+		<div class="box same-height headline"><!--box same-height headline stards -->
+			<h3 class="text-center">You may also like these products.</h3>
+		</div><!--box same-height headline ends -->
+	</div><!--col-md-3 col-sm-6 ends -->
+
+	<div class="center-responsive col-md-3 col-sm-6"><!--center-responsive col-md-3 col-sm-6 starts-->
+		<div class="product same-height"><!--product same-height starts -->
+			<a href="details.php">
 					<img src="admin_area/product_images/dental examination set.jpg" class="img-responsive">
 				</a>
 					<div class="text"><!--text starts -->
