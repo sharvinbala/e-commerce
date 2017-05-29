@@ -46,6 +46,16 @@ function add_cart()
 
 /// add_cart function ends///
 
+/// items function starts///
+
+function items()
+{
+	
+}
+
+
+/// items function ends///
+
 
 function getPro()
 {

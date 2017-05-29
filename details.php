@@ -42,7 +42,7 @@ if(isset($_GET['pro_id']))
 			</a>
 
 			<a href="#">
-			Shopping Cart Total Price: RM 100, Total Items: 2
+			Shopping Cart Total Price: RM 100, Total Items: <?php items(); ?>
 			</a>
 
 				</div><!--col md 6 offer ends -->
@@ -129,7 +129,7 @@ if(isset($_GET['pro_id']))
 
 					<a class="btn btn-primary navbar-btn right" href="cart.php"><!--"btn btn-primary navbar-btn right  starts-->
 						<i class="fa fa-shopping-cart"></i>
-						<span>4 items in cart</span>
+						<span><?php items(); ?> items in cart</span>
 					</a><!--"btn btn-primary navbar-btn right ends-->
 
 					<div class="navbar-collapse collapse right"><!-- navbar collapse right starts-->
