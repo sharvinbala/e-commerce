@@ -1,12 +1,26 @@
 <div class="panel panel-default sidebar-menu"><!--sidebar menu starts -->
-	<div class="panel-heading"><!--panel heading starts -->
-		<center>
-			<img src="customer_images/flag.jpg" class="img-responsive">
-		</center>
-		<br>
-		<h3 align="center" class="panel-title">Name: Sharvin</h3>
-	</div><!--panel heading ends -->
+<?php
+$customer_session = $_SESSION['customer_email'];
+$get_customer = "select * from customers where customer_email='$customer_session'";
+$run_customer = mysqli_query($con, $get_customer);
+$row_customer = mysqli_fetch_array($run_customer);
+$customer_image = $row_customer['customer_image'];
+$customer_name = $row_customer['customer_name'];
 
+if (!isset($_SESSION['customer_email'])) {
+	# code...
+}else{
+
+	echo "
+<center>
+<img src='customer_images/$customer_image' class='img-responsive'>
+</center>
+<br>
+<h3 align='center' class='panel-title'>$customer_name</h3>
+	";
+}
+
+?>
 		<div class="panel-body"><!-- panel body starts-->
 			<ul class="nav nav-pills nav-stacked"><!--nav staced starts -->
 				<li class="<?php if (isset($_GET['my_orders'])) { echo "active"; }?>">
