@@ -65,9 +65,20 @@ if(isset($_GET['pro_id']))
 					</li>
 
 					<li>
-						<a href="checkout.php">
-							My Account
-						</a>
+						<?php
+
+						if(!isset($_SESSION['customer_email'])){
+
+						echo "<a href='checkout.php' >My Account</a>";
+
+						}
+						else{
+
+						echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+
+						}
+
+						?>
 					</li>
 
 					<li>
@@ -127,7 +138,20 @@ if(isset($_GET['pro_id']))
 						</li>
 
 						<li>
-							<a href="checkout.php">My Account</a>
+							<?php
+
+						if(!isset($_SESSION['customer_email'])){
+
+						echo "<a href='checkout.php' >My Account</a>";
+
+						}
+						else{
+
+						echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+
+						}
+
+						?>
 						</li>
 
 						<li>
