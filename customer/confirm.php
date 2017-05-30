@@ -4,11 +4,16 @@ if (!isset($_SESSION['customer_email'])) {
 	echo "<script>window.open('../checkout.php', '_self')</script>";
 }else{
 
-
-
 ?>
 <?php include ("includes/db.php"); ?>
 <?php include ("functions/function.php"); ?>
+<?php
+
+if (isset($_GET['order_id'])) {
+	$order_id = $_GET['order_id'];
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -213,7 +218,7 @@ if (!isset($_SESSION['customer_email'])) {
 <div class="col-md-9"><!-- col md 9 starts -->
 	<div class="box"><!-- box starts -->
 		<h1 align="center">Please Confirm Your Payment</h1>
-			<form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form starts -->
+			<form action="confirm.php?update_id=<?php echo $order_id; ?>" method="post" enctype="multipart/form-data"><!-- form starts -->
 				<div class="form-group"><!-- form-group starts -->
 					<label>Invoice Number</label>
 					<input type="text" class="form-control" name="invoice_no" required>
@@ -262,7 +267,25 @@ if (!isset($_SESSION['customer_email'])) {
 				</div><!--text center ends -->
 
 			</form><!--form ends -->
-	</div><!-- boxends -->
+
+<?php
+if (isset($_POST['confirm_payment'])) {
+	$update_id = $_GET['update_id'];
+	$invoice_no = $_POST['invoice_no'];
+	$amount = $_POST['amount_sent'];
+	$payment_mode = $_POST['payment_mode'];
+	$ref_no = $_POST['ref_no'];
+	$code = $_POST['code'];
+	$payment_date = $_POST['date'];
+
+	$complete = "Complete";
+	$insert_payment = "insert into payments (invoice_no, amount, payment_mode, ref_no, code, payment_date)
+	values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date') ";
+}
+
+
+?>
+	</div><!-- box ends -->
 </div><!-- col md 9 ends -->
 
 
