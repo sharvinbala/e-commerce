@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include ("includes/db.php"); ?>
 <?php include ("functions/function.php"); ?>
 
@@ -17,7 +18,16 @@
 	<div class="container"> <!--Container starts -->
 		<div class ="col-md-6 offer"> <!-- col md 6 offer starts -->
 			<a href="#" class="btn btn-success btn-sm">
-			Welcome: Guest!
+			<?php
+			if (!isset($_SESSION['customer_email'])) {
+				echo "Welcome: Guest";
+			}
+			else
+			{
+				echo "Welcome:" .$_SESSION['customer_email'] . "";
+			}
+
+			?>
 			</a>
 
 			<a href="#">
@@ -46,9 +56,14 @@
 					</li>
 
 					<li>
-						<a href="checkout.php">
-							Login
-						</a>
+						<?php
+							if (!isset($_SESSION['customer_email'])) {
+								echo "<a href='checkout.php'>Login</a>";
+							}
+							else{							
+								echo "<a href='logout.php'>Logout</a>";
+							}
+						?>
 					</li>
 
 				</ul><!--menu ends -->
