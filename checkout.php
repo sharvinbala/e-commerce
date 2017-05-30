@@ -181,7 +181,20 @@ include ("functions/function.php");
 			?>
 		</div><!-- col md 3 ends -->
 
+<div class="col-md-9"><!--col-md-9 starts -->
+<?php
 
+if (!isset($_SESSION['customer_email'])) {
+	include ("customer/customer_login.php");
+}
+else
+{
+	include ("payment_options.php");
+}
+
+?>
+
+</div><!--col-md-9 ends -->
 
 
 
