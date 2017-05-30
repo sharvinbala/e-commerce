@@ -44,9 +44,20 @@
 					</li>
 
 					<li>
-						<a href="customer/checkout.php">
-							My Account
-						</a>
+						<?php
+
+						if(!isset($_SESSION['customer_email'])){
+
+						echo "<a href='checkout.php' >My Account</a>";
+
+						}
+						else{
+
+						echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+
+						}
+
+						?>
 					</li>
 
 					<li>
@@ -57,13 +68,19 @@
 
 					<li>
 						<?php
-							if (!isset($_SESSION['customer_email'])) {
-								echo "<a href='checkout.php'>Login</a>";
+
+							if(!isset($_SESSION['customer_email'])){
+
+							echo "<a href='checkout.php'> Login </a>";
+
+							}else {
+
+							echo "<a href='logout.php'> Logout </a>";
+
 							}
-							else{							
-								echo "<a href='logout.php'>Logout</a>";
-							}
-						?>
+
+							?>
+
 					</li>
 
 				</ul><!--menu ends -->
