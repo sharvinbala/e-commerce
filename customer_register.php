@@ -1,5 +1,10 @@
-<?php include ("includes/db.php"); ?>
-<?php include ("functions/function.php"); ?>
+<?php
+session_start();
+
+include ("includes/db.php"); 
+include ("functions/function.php"); 
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +22,16 @@
 	<div class="container"> <!--Container starts -->
 		<div class ="col-md-6 offer"> <!-- col md 6 offer starts -->
 			<a href="#" class="btn btn-success btn-sm">
-			Welcome: Guest!
+			<?php
+			if (!isset($_SESSION['customer_email'])) {
+				echo "Welcome: Guest";
+			}
+			else
+			{
+				echo "Welcome:" .$_SESSION['customer_email'] . "";
+			}
+
+			?>
 			</a>
 
 			<a href="#">
@@ -233,3 +247,43 @@
 
 	</body>
 	</html>
+
+	<?php
+if (isset($_POST['register'])) {
+	$c_name = $_POST['c_name'];
+	$c_email = $_POST['c_email'];
+	$c_pass = $_POST['c_pass'];
+	$c_country = $_POST['c_country'];
+	$c_city = $_POST['c_city'];
+	$c_contact = $_POST['c_contact'];
+	$c_address = $_POST['c_address'];
+	$c_image = $_FILES['c_image']['name'];
+	$c_image_tmp = $_FILES['c_image']['tmp_name'];
+	$c_ip = getRealUserIp();
+	move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
+
+	$insert_customer = "insert into customers (customer_name, customer_email, customer_pass, customer_country,
+		customer_city, customer_contact, customer_address, customer_image, customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city',
+	'$c_contact','$c_address','$c_image','$c_ip')";
+
+$run_customer = mysqli_query($con, $insert_customer);
+$sel_cart = "select * from cart where ip_add='$c_ip'";
+$run_cart = mysqli_query($con,$sel_cart);
+$check_cart = mysqli_num_rows($run_cart);
+
+if ($check_cart>0) {
+	$_SESSION['customer_email'] = $c_email;
+
+	echo "<script>alert('You have been registerd successfully!')</script>";
+	echo "<script>window.open('checkout.php','_self')</script>";
+}
+else{
+$_SESSION['customer_email'] = $c_email;
+
+	echo "<script>alert('You have been registerd successfully!')</script>";
+	echo "<script>window.open('index.php','_self')</script>";
+}
+}
+
+
+?>
