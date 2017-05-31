@@ -1,64 +1,142 @@
-<nav class="navbar navbar-inverse navbar-fixed-top"><!--navbar starts -->
-<div class="navbar-header"><!--navbar-header starts -->
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><!--navbar ex 1 starts -->
+<nav class="navbar navbar-inverse navbar-fixed-top" ><!-- navbar navbar-inverse navbar-fixed-top Starts -->
 
-<span class="sr-only">Toggle Navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
+<div class="navbar-header" ><!-- navbar-header Starts -->
 
-</button><!--navbar ex1 ends -->
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" ><!-- navbar-ex1-collapse Starts -->
 
-<a class="navbar-brand" href="index.php?dashboard">Admin Panel</a>
 
-</div><!--navbar-header ends -->
+<span class="sr-only" >Toggle Navigation</span>
 
-<ul class="nav navbar-right top-nav"><!-- navbar right starts -->
-<li class="dropdown"><!-- dropdown starts -->
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-<i class="fa fa-user"></i>
-Sharvin <b class="caret"></b>
+<span class="icon-bar" ></span>
+
+<span class="icon-bar" ></span>
+
+<span class="icon-bar" ></span>
+
+
+</button><!-- navbar-ex1-collapse Ends -->
+
+<a class="navbar-brand" href="index.php?dashboard" >Admin Panel</a>
+
+
+</div><!-- navbar-header Ends -->
+
+<ul class="nav navbar-right top-nav" ><!-- nav navbar-right top-nav Starts -->
+
+<li class="dropdown" ><!-- dropdown Starts -->
+
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" ><!-- dropdown-toggle Starts -->
+
+<i class="fa fa-user" ></i>
+
+Sharvin <b class="caret" ></b>
+
+
+</a><!-- dropdown-toggle Ends -->
+
+<ul class="dropdown-menu" ><!-- dropdown-menu Starts -->
+
+<li><!-- li Starts -->
+
+<a href="index.php?user_profile=" >
+
+<i class="fa fa-fw fa-user" ></i> Profile
+
+
 </a>
 
-<ul class="dropdown-menu"><!-- dropdown-menu starts -->
+</li><!-- li Ends -->
 
-<li><!-- li starts -->
-<a href="index.php?user_profile">
-<i class="fa fa-fw fa-user"></i>Profile
+<li><!-- li Starts -->
+
+<a href="index.php?view_products" >
+
+<i class="fa fa-fw fa-envelope" ></i> Products 
+
+<span class="badge" >5</span>
+
 
 </a>
+
+</li><!-- li Ends -->
+
+<li><!-- li Starts -->
+
+<a href="index.php?view_customers" >
+
+<i class="fa fa-fw fa-gear" ></i> Customers
+
+<span class="badge" >700</span>
+
+
+</a>
+
+</li><!-- li Ends -->
+
+<li><!-- li Starts -->
+
+<a href="index.php?view_p_cats" >
+
+<i class="fa fa-fw fa-gear" ></i> Product Categories
+
+<span class="badge" >14</span>
+
+
+</a>
+
+</li><!-- li Ends -->
+
+<li class="divider"></li>
+
+<li><!-- li Starts -->
+
+<a href="logout.php">
+
+<i class="fa fa-fw fa-power-off"> </i> Log Out
+
+</a>
+
+</li><!-- li Ends -->
+
+</ul><!-- dropdown-menu Ends -->
+
+
+
+
+</li><!-- dropdown Ends -->
+
+
+</ul><!-- nav navbar-right top-nav Ends -->
+
+<div class="collapse navbar-collapse navbar-ex1-collapse"><!-- collapse navbar-collapse navbar-ex1-collapse Starts -->
+
+<ul class="nav navbar-nav side-nav"><!-- nav navbar-nav side-nav Starts -->
+
+<li><!-- li Starts -->
+
+<a href="index.php?dashboard">
+
+<i class="fa fa-fw fa-dashboard"></i> Dashboard
+
+</a>
+
+</li><!-- li Ends -->
+
+<li><!-- li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#products">
+
+<i class="fa fa-fw fa-table"></i> Products
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a>
+<ul id="products" class="collapse">
+
+
+</ul>
+
 </li><!-- li ends -->
-
-<li><!-- li starts -->
-<a href="index.php?view_products">
-<i class="fa fa-fw fa-envelope"></i>Products
-
-</a>
-</li><!-- li ends -->
-
-<li><!-- li starts -->
-<a href="index.php?user_profile">
-<i class="fa fa-fw fa-user"></i>Products
-<span class="badge">7</span>
-</a>
-</li><!-- li ends -->
-
-<li><!-- li starts -->
-<a href="index.php?view_customers">
-<i class="fa fa-fw fa-gear"></i>Customers
-<span class="badge">12</span>
-
-<li><!-- li starts -->
-<a href="index.php?view_cats">
-<i class="fa fa-fw fa-gear"></i>Product Categories
-<span class="badge">5</span>
-
-</a>
-</li><!-- li ends -->
-
-</ul><!-- dropdown menu ends -->
-
-</li><!-- dropdown ends -->
-</ul><!-- navbar right ends -->
-
+</ul><!-- navbar-nav ends -->
 </nav> <!--navbar ends -->
