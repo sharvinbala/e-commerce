@@ -120,6 +120,67 @@
 </div><!-- panel red ends -->
 </div><!-- col md 6 ends -->
 
-
-
 </div><!-- 2 row ends -->
+
+<div class="row"><!-- 3 row starts -->
+<div class="col-lg-8"><!-- col lg 8 starts -->
+<div class="panel panel-primary"><!-- panel primary starts -->
+<div class="panel-heading"><!-- panel heading starts -->
+<h3 class="panel-title"><!-- panel title starts -->
+<i class="fa fa-money fa-fw"></i> New Orders
+</h3>	<!-- panel title ends -->
+</div><!-- panel heading ends -->
+
+<div class="panel-body"><!-- panel body starts -->
+<div class="table-responsive"><!-- table responsive starts -->
+<table class="table table-bordered table-hover table-striped"><!-- table striped starts -->
+<thead><!-- thead starts -->
+
+<tr>
+<th>Order No</th>
+<th>Customer Email</th>
+<th>Invoice No</th>
+<th>Product ID</th>
+<th>Product Quantity</th>
+<th>Status</th>
+
+</tr>
+
+</thead><!-- ends -->
+
+<tbody><!-- tbody starts -->
+<tr>
+<td>1</td>
+<td>sharvinbala@gmail.com</td>
+<td>1234</td>
+<td>123</td>
+<td>12</td>
+<td>Complete</td>
+<tr>
+
+<tr>
+<td>1</td>
+<td>sharvinbala@gmail.com</td>
+<td>1234</td>
+<td>123</td>
+<td>12</td>
+<td>Complete</td>
+<tr>
+
+</tbody><!-- tbody ends -->
+
+
+</table><!-- table striped ends -->
+</div><!-- table responsive ends -->
+
+<div class="text-right"><!-- text-right starts -->
+<a href="index.php?view_orders">
+View All Orders <i class="fa fa-arrow-circle-right"></i>
+</a>
+
+</div><!-- text-right ends -->
+
+</div><!-- panel body ends -->
+</div><!-- panel primary ends -->
+</div><!-- col lg 8 ends -->
+</div><!-- 3 row ends -->
