@@ -38,7 +38,7 @@ Sharvin <b class="caret" ></b>
 
 <li><!-- li Starts -->
 
-<a href="index.php?user_profile=" >
+<a href="index.php?user_profile" >
 
 <i class="fa fa-fw fa-user" ></i> Profile
 
@@ -53,7 +53,7 @@ Sharvin <b class="caret" ></b>
 
 <i class="fa fa-fw fa-envelope" ></i> Products 
 
-<span class="badge" >5</span>
+<span class="badge" >14</span>
 
 
 </a>
@@ -66,7 +66,7 @@ Sharvin <b class="caret" ></b>
 
 <i class="fa fa-fw fa-gear" ></i> Customers
 
-<span class="badge" >700</span>
+<span class="badge" >12</span>
 
 
 </a>
@@ -79,7 +79,7 @@ Sharvin <b class="caret" ></b>
 
 <i class="fa fa-fw fa-gear" ></i> Product Categories
 
-<span class="badge" >14</span>
+<span class="badge" >19</span>
 
 
 </a>
@@ -132,11 +132,175 @@ Sharvin <b class="caret" ></b>
 
 
 </a>
+
 <ul id="products" class="collapse">
+
+<li>
+<a href="index.php?insert_product"> Insert Products </a>
+</li>
+
+<li>
+<a href="index.php?view_products"> View Products </a>
+</li>
 
 
 </ul>
 
-</li><!-- li ends -->
-</ul><!-- navbar-nav ends -->
-</nav> <!--navbar ends -->
+</li><!-- li Ends -->
+
+
+<li><!-- li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#p_cat">
+
+<i class="fa fa-fw fa-pencil"></i> Products Categories
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a>
+
+<ul id="p_cat" class="collapse">
+
+<li>
+<a href="index.php?insert_p_cat"> Insert Product Category </a>
+</li>
+
+<li>
+<a href="index.php?view_p_cats"> View Products Categories </a>
+</li>
+
+
+</ul>
+
+</li><!-- li Ends -->
+
+
+<li><!-- li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#cat">
+
+<i class="fa fa-fw fa-arrows-v"></i> Categories
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a>
+
+<ul id="cat" class="collapse">
+
+<li>
+<a href="index.php?insert_cat"> Insert Category </a>
+</li>
+
+<li>
+<a href="index.php?view_cats"> View Categories </a>
+</li>
+
+
+</ul>
+
+</li><!-- li Ends -->
+
+
+<li><!-- li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#slides">
+
+<i class="fa fa-fw fa-gear"></i> Slides
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a>
+
+<ul id="slides" class="collapse">
+
+<li>
+<a href="index.php?insert_slide"> Insert Slide </a>
+</li>
+
+<li>
+<a href="index.php?view_slides"> View Slides </a>
+</li>
+
+
+</ul>
+
+</li><!-- li Ends -->
+
+<li>
+
+<a href="index.php?view_customers">
+
+<i class="fa fa-fw fa-edit"></i> View Customers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="index.php?view_orders">
+
+<i class="fa fa-fw fa-list"></i> View Orders
+
+</a>
+
+</li>
+
+<li>
+
+<a href="index.php?view_payments">
+
+<i class="fa fa-fw fa-pencil"></i> View Payments
+
+</a>
+
+</li>
+
+<li><!-- li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#users">
+
+<i class="fa fa-fw fa-gear"></i> Users
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a>
+
+<ul id="users" class="collapse">
+
+<li>
+<a href="index.php?insert_user"> Insert User </a>
+</li>
+
+<li>
+<a href="index.php?view_users"> View Users </a>
+</li>
+
+<li>
+<a href="index.php?user_profile"> Edit Profile </a>
+</li>
+
+</ul>
+
+</li><!-- li Ends -->
+
+<li><!-- li Starts -->
+
+<a href="logout.php">
+
+<i class="fa fa-fw fa-power-off"></i> Log Out
+
+</a>
+
+</li><!-- li Ends -->
+
+</ul><!-- nav navbar-nav side-nav Ends -->
+
+</div><!-- collapse navbar-collapse navbar-ex1-collapse Ends -->
+
+</nav><!-- navbar navbar-inverse navbar-fixed-top Ends -->
+
