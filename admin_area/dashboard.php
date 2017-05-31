@@ -1,3 +1,15 @@
+<?php
+
+if (!isset($_SESSION['admin_email'])) {
+	echo "<script>window.open('login.php','_self')</script>";
+}
+else
+{
+
+
+
+?>
+
 <div class="row"><!-- 1 row starts -->
 <div class="col-lg-12"><!-- col lg 12 starts -->
 <h1 class="page-header">Dashboard</h1>
@@ -199,3 +211,4 @@ View All Orders <i class="fa fa-arrow-circle-right"></i>
 </div><!-- panel ends -->
 </div><!-- col md 4 ends -->
 </div><!-- 3 row ends -->
+<?php } ?>
