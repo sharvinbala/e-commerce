@@ -13,6 +13,8 @@
 <div id="page-wrapper"><!-- page wrapper starts -->
 <div class="container-fluid"><!--container fluid starts -->
 
+<?php include ("includes/sidebar.php"); ?>
+
 </div><!--container fluid ends-->
 </div><!-- page wrapper starts -->
 </div><!--wrapper ends -->
