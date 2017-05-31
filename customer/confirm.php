@@ -245,8 +245,6 @@ if (isset($_GET['order_id'])) {
 
 <option>Select Payment Mode</option>
 <option>Bank Code</option>
-<option>UBL/Omni Paisa</option>
-<option>Easy paisa</option>
 <option>Western Union</option>
 
 </select><!-- select Ends -->
