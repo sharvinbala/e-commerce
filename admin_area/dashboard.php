@@ -183,4 +183,19 @@ View All Orders <i class="fa fa-arrow-circle-right"></i>
 </div><!-- panel body ends -->
 </div><!-- panel primary ends -->
 </div><!-- col lg 8 ends -->
+
+<div class="col-md-4"><!-- col md 4 starts -->
+
+<div class="panel"><!-- panel starts -->
+
+<div class="panel-body"><!-- panel body starts -->
+<div class="thumb-info mb-md"><!-- thumb info starts -->
+<img src="images/admin.png" class="rounded img-responsive">
+
+
+</div><!-- thumb info title ends -->
+</div><!-- thumb info ends -->
+</div><!-- panel body ends -->
+</div><!-- panel ends -->
+</div><!-- col md 4 ends -->
 </div><!-- 3 row ends -->
