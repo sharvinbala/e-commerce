@@ -218,55 +218,70 @@ if (isset($_GET['order_id'])) {
 <div class="col-md-9"><!-- col md 9 starts -->
 	<div class="box"><!-- box starts -->
 		<h1 align="center">Please Confirm Your Payment</h1>
-			<form action="confirm.php?update_id=<?php echo $order_id; ?>" method="post" enctype="multipart/form-data"><!-- form starts -->
-				<div class="form-group"><!-- form-group starts -->
-					<label>Invoice Number</label>
-					<input type="text" class="form-control" name="invoice_no" required>
-				</div><!-- form-group ends -->
-			</form><!--form ends -->
+			<form action="confirm.php?update_id=<?php echo $order_id; ?>" method="post" enctype="multipart/form-data"><!--- form Starts -->
 
-				<div class="form-group"><!-- form-group starts -->
-					<label>Invoice Number</label>
-					<input type="text" class="form-control" name="invoice_no" required>
-				</div><!-- form-group ends -->
-			</form><!--form ends -->
+<div class="form-group"><!-- form-group Starts -->
 
-				<div class="form-group"><!-- form-group starts -->
-					<label>Amount Sent</label>
-					<input type="text" class="form-control" name="amount_sent" required>
-				</div><!-- form-group ends -->
-			</form><!--form ends -->
+<label>Invoice No:</label>
 
-				<div class="form-group"><!-- form-group starts -->
-					<label>Select Payment Mode</label>
-					<select name="payment_mode" class="form-control"><!-- select starts -->
-						<option>Select Payment Mode</option>
-						<option>Deposit Receipt Number</option>
-						<option>Western Union Number</option>
-					</select><!-- select ends -->
-				</div><!-- form-group ends -->
-			</form><!--form ends -->
+<input type="text" class="form-control" name="invoice_no" required>
 
-			<form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form starts -->
-				<div class="form-group"><!-- form-group starts -->
-					<label>Transaction/Reference ID</label>
-					<input type="text" class="form-control" name="invoice_no" required>
-				</div><!-- form-group ends -->
-			</form><!--form ends -->
+</div><!-- form-group Ends -->
 
-			<form action="confirm.php" method="post" enctype="multipart/form-data"><!-- form starts -->
-				<div class="form-group"><!-- form-group starts -->
-					<label>Payment Date</label>
-					<input type="text" class="form-control" name="date" required>
-				</div><!-- form-group ends -->
 
-				<div class="text-center"><!--text center starts -->
-					<button type="submit" name="confirm_payment" class="btn btn-primary btn-lg">
-						<i class="fa fa-user-md"></i> Confirm Payment
-					</button>
-				</div><!--text center ends -->
+<div class="form-group"><!-- form-group Starts -->
 
-			</form><!--form ends -->
+<label>Amount Sent:</label>
+
+<input type="text" class="form-control" name="amount_sent" required>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group"><!-- form-group Starts -->
+
+<label>Select Payment Mode:</label>
+
+<select name="payment_mode" class="form-control"><!-- select Starts -->
+
+<option>Select Payment Mode</option>
+<option>Bank Code</option>
+<option>UBL/Omni Paisa</option>
+<option>Easy paisa</option>
+<option>Western Union</option>
+
+</select><!-- select Ends -->
+
+</div><!-- form-group Ends -->
+
+<div class="form-group"><!-- form-group Starts -->
+
+<label>Transaction/Reference Id:</label>
+
+<input type="text" class="form-control" name="ref_no" required>
+
+</div><!-- form-group Ends -->
+
+
+<div class="form-group"><!-- form-group Starts -->
+
+<label>Payment Date:</label>
+
+<input type="text" class="form-control" name="date" required>
+
+</div><!-- form-group Ends -->
+
+<div class="text-center"><!-- text-center Starts -->
+
+<button type="submit" name="confirm_payment" class="btn btn-primary btn-lg">
+
+<i class="fa fa-user-md"></i> Confirm Payment
+
+</button>
+
+</div><!-- text-center Ends -->
+
+</form><!--- form Ends -->
+
 
 <?php
 if (isset($_POST['confirm_payment'])) {
@@ -274,13 +289,24 @@ if (isset($_POST['confirm_payment'])) {
 	$invoice_no = $_POST['invoice_no'];
 	$amount = $_POST['amount_sent'];
 	$payment_mode = $_POST['payment_mode'];
-	$ref_no = $_POST['ref_no'];
-	$code = $_POST['code'];
+	$ref_no = $_POST['ref_no'];	
 	$payment_date = $_POST['date'];
 
 	$complete = "Complete";
-	$insert_payment = "insert into payments (invoice_no, amount, payment_mode, ref_no, code, payment_date)
-	values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date') ";
+	$insert_payment = "insert into payments (invoice_no, amount, payment_mode, ref_no, payment_date)
+	values ('$invoice_no','$amount','$payment_mode','$ref_no','$payment_date') ";
+
+	$run_payment = mysqli_query($con, $insert_payment);
+	$update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+	$run_customer_order = mysqli_query($con, $update_customer_order);
+	$update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+
+	$run_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+
+	if ($run_pending_order) {
+		echo "<script>alert('Your payment has been received. Your order will be completed within 24 hours')</script>";
+		echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+	}
 }
 
 
