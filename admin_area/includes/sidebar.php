@@ -44,7 +44,7 @@ else
 
 <i class="fa fa-user" ></i>
 
-Sharvin <b class="caret" ></b>
+<?php echo $admin_name; ?> <b class="caret" ></b>
 
 
 </a><!-- dropdown-toggle Ends -->
@@ -53,7 +53,7 @@ Sharvin <b class="caret" ></b>
 
 <li><!-- li Starts -->
 
-<a href="index.php?user_profile" >
+<a href="index.php?user_profile=<?php echo $admin_id; ?>" >
 
 <i class="fa fa-fw fa-user" ></i> Profile
 
@@ -66,9 +66,9 @@ Sharvin <b class="caret" ></b>
 
 <a href="index.php?view_products" >
 
-<i class="fa fa-fw fa-envelope" ></i> Products 
+<i class="fa fa-fw fa-envelope" ></i> Categories
 
-<span class="badge" >14</span>
+<span class="badge" ><?php echo $count_cats; ?></span>
 
 
 </a>
@@ -81,7 +81,7 @@ Sharvin <b class="caret" ></b>
 
 <i class="fa fa-fw fa-gear" ></i> Customers
 
-<span class="badge" >12</span>
+<span class="badge" ><?php echo $count_customers; ?></span>
 
 
 </a>
@@ -94,7 +94,7 @@ Sharvin <b class="caret" ></b>
 
 <i class="fa fa-fw fa-gear" ></i> Product Categories
 
-<span class="badge" >19</span>
+<span class="badge" ><?php echo $count_p_categories; ?></span>
 
 
 </a>
