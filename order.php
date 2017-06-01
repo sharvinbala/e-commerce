@@ -44,7 +44,7 @@ $insert_customer_order = "insert into customer_orders (customer_id,due_amount,in
 
 $run_customer_order = mysqli_query($con,$insert_customer_order);
 
-$insert_pending_order = "insert into pending_orders (customer_id,invoice_no,product_id,qty,order_status) values ('$customer_id','$invoice_no','$pro_id','$pro_qty','$status')";
+$insert_pending_order = "insert into pending_order (customer_id,invoice_no,product_id,qty,order_status) values ('$customer_id','$invoice_no','$pro_id','$pro_qty','$status')";
 
 $run_pending_order = mysqli_query($con,$insert_pending_order);
 

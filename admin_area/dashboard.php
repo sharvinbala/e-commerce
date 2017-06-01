@@ -32,7 +32,7 @@ else
 </div><!-- col xs 3 ends -->
 
 <div class="col-xs-9 text-right"><!-- col xs 9 text right starts -->
-<div class="huge">15</div>
+<div class="huge"><?php echo "$count_products"; ?></div>
 <div>Products</div>
 
 </div><!-- col xs 9 text right ends -->
@@ -60,7 +60,7 @@ else
 </div><!-- col xs 3 ends -->
 
 <div class="col-xs-9 text-right"><!-- col xs 9 text right starts -->
-<div class="huge">9</div>
+<div class="huge"><?php echo "$count_customers"; ?></div>
 <div>Customers</div>
 
 </div><!-- col xs 9 text right ends -->
@@ -87,7 +87,7 @@ else
 </div><!-- col xs 3 ends -->
 
 <div class="col-xs-9 text-right"><!-- col xs 9 text right starts -->
-<div class="huge">6</div>
+<div class="huge"><?php echo "$count_p_categories"; ?></div>
 <div>Product Categories</div>
 
 </div><!-- col xs 9 text right ends -->
@@ -114,7 +114,7 @@ else
 </div><!-- col xs 3 ends -->
 
 <div class="col-xs-9 text-right"><!-- col xs 9 text right starts -->
-<div class="huge">4</div>
+<div class="huge"><?php echo "$count_pending_orders"; ?></div>
 <div>Orders</div>
 
 </div><!-- col xs 9 text right ends -->
@@ -144,46 +144,98 @@ else
 </div><!-- panel heading ends -->
 
 <div class="panel-body"><!-- panel body starts -->
-<div class="table-responsive"><!-- table responsive starts -->
-<table class="table table-bordered table-hover table-striped"><!-- table striped starts -->
-<thead><!-- thead starts -->
+<div class="table-responsive" ><!-- table-responsive Starts -->
+
+<table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
+
+<thead><!-- thead Starts -->
 
 <tr>
-<th>Order No</th>
-<th>Customer Email</th>
-<th>Invoice No</th>
-<th>Product ID</th>
-<th>Product Quantity</th>
-<th>Status</th>
+<th>Order No:</th>
+<th>Customer Email:</th>
+<th>Invoice No:</th>
+<th>Product ID:</th>
+<th>Product Qty:</th>
+<th>Status:</th>
+
 
 </tr>
 
-</thead><!-- ends -->
+</thead><!-- thead Ends -->
 
-<tbody><!-- tbody starts -->
+<tbody><!-- tbody Starts -->
+
+<?php
+
+$i = 0;
+
+$get_order = "select * from pending_order order by 1 DESC LIMIT 0,5";
+$run_order = mysqli_query($con,$get_order);
+
+while($row_order=mysqli_fetch_array($run_order)){
+
+
+$order_id = $row_order['order_id'];
+
+$c_id = $row_order['customer_id'];
+
+$invoice_no = $row_order['invoice_no'];
+
+$product_id = $row_order['product_id'];
+
+$qty = $row_order['qty'];
+
+$order_status = $row_order['order_status'];
+
+
+$i++;
+
+?>
+
 <tr>
-<td>1</td>
-<td>sharvinbala@gmail.com</td>
-<td>1234</td>
-<td>123</td>
-<td>12</td>
-<td>Complete</td>
-<tr>
 
-<tr>
-<td>1</td>
-<td>sharvinbala@gmail.com</td>
-<td>1234</td>
-<td>123</td>
-<td>12</td>
-<td>Complete</td>
-<tr>
+<td><?php echo $i; ?></td>
 
-</tbody><!-- tbody ends -->
+<td>
+<?php
+
+$get_customer = "select * from customers where customer_id='$c_id'";
+$run_customer = mysqli_query($con,$get_customer);
+$row_customer = mysqli_fetch_array($run_customer);
+$customer_email = $row_customer['customer_email'];
+echo $customer_email;
+?>
+</td>
+
+<td><?php echo $invoice_no; ?></td>
+<td><?php echo $product_id; ?></td>
+<td><?php echo $qty; ?></td>
+<td>
+<?php
+if($order_status=='pending'){
+
+echo $order_status='pending';
+
+}
+else {
+
+echo $order_status='Complete';
+
+}
+
+?>
+</td>
+
+</tr>
+
+<?php } ?>
+
+</tbody><!-- tbody Ends -->
 
 
-</table><!-- table striped ends -->
-</div><!-- table responsive ends -->
+</table><!-- table table-bordered table-hover table-striped Ends -->
+
+</div><!-- table-responsive Ends -->
 
 <div class="text-right"><!-- text-right starts -->
 <a href="index.php?view_orders">

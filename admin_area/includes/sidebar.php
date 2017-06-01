@@ -295,7 +295,7 @@ else
 </li>
 
 <li>
-<a href="index.php?user_profile"> Edit Profile </a>
+<a href="index.php?user_profile=<?php echo $admin_id;  ?>"> Edit Profile </a>
 </li>
 
 </ul>
