@@ -65,10 +65,42 @@ $pro_image = $row_pro['product_img1'];
 $pro_price = $row_pro['product_price'];
 $pro_keywords = $row_pro['product_keywords'];
 $pro_date = $row_pro['date'];
-
-
-
+$i++;
 ?>
+
+<tr>
+<td><?php echo $i; ?> </td>
+<td><?php echo $pro_title; ?> </td>
+<td><img src="product_images/<?php echo $pro_image; ?>" width="60" height="60>" </td>
+<td>RM <?php echo $pro_price; ?> </td>
+<td>
+<?php
+
+$get_sold = "select * from pending_order where product_id='$pro_id'"; 
+$run_sold = mysqli_query($con, $get_sold);
+$count = mysqli_num_rows($run_sold);
+echo $count;
+?>
+</td>
+
+<td><?php echo $pro_keywords; ?> </td>
+<td><?php echo $pro_date; ?> </td>
+
+<td>
+<a href="index.php?delete_product=<?php echo $pro_id ?>">
+<i class="fa fa-trash-o"></i> Delete
+
+</a>
+</td>
+
+<td>
+<a href="index.php?edit_product=<?php echo $pro_id ?>">
+<i class="fa fa-pencil"></i> Edit
+
+</a>
+</td>
+
+</tr>
 
 
 <?php } ?>
