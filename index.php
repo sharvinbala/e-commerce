@@ -187,66 +187,102 @@
 	</div> <!--Navbar default ends -->	
 </div><!--Navbar default ends -->
 
-<div class="container" id="slider"> <!-- container slider begins -->
-	<div class="col-md-12"> <!-- col-md-12  begins -->
-		<div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- myCarousel  begins -->
+<div class="container" id="slider"><!-- container Starts -->
 
-			<ol class="carousel-indicators"><!-- carousel indicators starts -->
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>		
-			</ol> <!-- carousel indicators ends -->
+<div class="col-md-12"><!-- col-md-12 Starts -->
 
-<div class="carousel-inner"><!-- carousel inner starts -->
-<?php						
-	$get_slides = "SELECT * FROM slider LIMIT 0,1";
-	$run_slides = mysqli_query($con, $get_slides);
+<div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Starts --->
 
-	while($row_slides=mysqli_fetch_array($run_slides))
-	{
-		$slide_name = $row_slides['slide_name'];
-		$slide_image = $row_slides['slide_image'];
+<ol class="carousel-indicators"><!-- carousel-indicators Starts -->
 
-		echo "
-		<div class='item active'>
-			<img src='admin_area/slides_images/$slide_image'>
-		</div>
-		";
-	}
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+<li data-target="#myCarousel" data-slide-to="1"></li>
+
+<li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+</ol><!-- carousel-indicators Ends -->
+
+<div class="carousel-inner"><!-- carousel-inner Starts -->
+
+<?php
+
+$get_slides = "select * from slider LIMIT 0,1";
+
+$run_slides = mysqli_query($con,$get_slides);
+
+while($row_slides=mysqli_fetch_array($run_slides)){
+
+$slide_name = $row_slides['slide_name'];
+$slide_image = $row_slides['slide_image'];
+
+echo "
+
+<div class='item active'>
+
+<img src='admin_area/slides_images/$slide_image'>
+
+</div>
+
+";
+}
+
 ?>
 
-<?php						
-	$get_slides = "SELECT * FROM slider LIMIT 1,3";
-	$run_slides = mysqli_query($con, $get_slides);
+<?php
 
-	while($row_slides=mysqli_fetch_array($run_slides))
-	{
-		$slide_name = $row_slides['slide_name'];
-		$slide_image = $row_slides['slide_image'];
+$get_slides = "select * from slider LIMIT 1,3 ";
 
-		echo "
-		<div class='item'>
-			<img src='admin_area/slides_images/$slide_image'>
-		</div>	
-		";
-	}
+$run_slides = mysqli_query($con,$get_slides);
+
+while($row_slides = mysqli_fetch_array($run_slides)) {
+
+
+$slide_name = $row_slides['slide_name'];
+
+$slide_image = $row_slides['slide_image'];
+
+echo "
+
+<div class='item'>
+
+<img src='admin_area/slides_images/$slide_image'>
+
+</div>
+
+";
+
+
+}
+
+
+
 ?>
 
-</div><!-- carousel inner ends -->
+</div><!-- carousel-inner Ends -->
 
-				<a class="left carousel-control" href="#myCarousel" data-slide="prev"><!--left carousel control starts -->
-					<span class="glyphicon glyphicon-chevron-left"></span>
-					<span class="sr-only">Previous</span>
-				</a><!--left carousel control ends -->
+<a class="left carousel-control" href="#myCarousel" data-slide="prev"><!-- left carousel-control Starts -->
 
-				<a class="right carousel-control" href="#myCarousel" data-slide="next"><!--right carousel control starts -->
-					<span class="glyphicon glyphicon-chevron-right"></span>
-					<span class="sr-only">Next</span>
-				</a><!--right carousel control ends -->
-		</div><!-- myCarousel ends -->
-	</div><!-- col-md-12 ends -->
-</div><!-- container slider ends -->
+<span class="glyphicon glyphicon-chevron-left"> </span>
+
+<span class="sr-only"> Previous </span>
+
+</a><!-- left carousel-control Ends -->
+
+<a class="right carousel-control" href="#myCarousel" data-slide="next"><!-- right carousel-control Starts -->
+
+<span class="glyphicon glyphicon-chevron-right"> </span>
+
+<span class="sr-only"> Next </span>
+
+</a><!-- right carousel-control Ends -->
+
+</div><!-- carousel slide Ends --->
+
+</div><!-- col-md-12 Ends -->
+
+</div><!-- container Ends -->
 
 <div id="advantages"> <!--advantages starts -->
 
@@ -312,30 +348,27 @@
 
 </div><!--advantages ends -->
 
-<div id="hot"><!--hot starts -->
-	<div class="box"><!--box starts -->
-		<div class="container"><!--container starts -->
-			<div class="col-md-12"><!--col-md-12 starts -->
-				<h2>Latest This Week</h2>
-			</div><!--col-md-12 ends -->
-		</div><!--container ends -->
-	</div><!--box ends -->
-</div><!--hot end -->
+<div id="hot"><!-- hot Starts -->
+<div class="box"><!-- box Starts -->
+<div class="container"><!-- container Starts -->
+<div class="col-md-12"><!-- col-md-12 Starts -->
+<h2 align="center">Latest this week</h2>
+</div><!-- col-md-12 Ends -->
+</div><!-- container Ends -->
+</div><!-- box Ends -->
+</div><!-- hot Ends -->
 
-
-<div id="content" class="container"><!--container starts -->
-	<div class="row"><!--row starts -->
-		<?php
-			getPro();
-		?>
-	</div><!--row ends -->
-</div><!--container ends -->
-
+<div id="content" class="container"><!-- container Starts -->
+<div class="row"><!-- row Starts -->
 <?php
-include ("includes/footer.php")
+getPro();
 ?>
-<script src="js/jquery.min.js"></script>
+</div><!-- row Ends -->
+</div><!-- container Ends -->
+<?php
+include("includes/footer.php");
+?>
+<script src="js/jquery.min.js"> </script>
 <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>
