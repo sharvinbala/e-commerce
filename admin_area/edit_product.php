@@ -28,6 +28,15 @@ if (isset($_GET['edit_product'])) {
 
 }
 
+$get_p_cat = "select * from product_categories where p_cat_id='$p_cat'";
+$run_p_cat = mysqli_query($con, $get_p_cat);
+$row_p_cat = mysqli_fetch_array($run_p_cat);
+$p_cat_title = $row_p_cat['p_cat_title'];
+$get_cat = "select * from categories where cat_id='$cat'";
+$run_cat = mysqli_query($con, $get_cat);
+$row_cat = mysqli_fetch_array($run_cat);
+$cat_title = $row_cat['cat_title'];
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +73,8 @@ if (isset($_GET['edit_product'])) {
 		<div class="form-group"><!--form-group starts -->
 			<label class="col-md-3 control-label">Products Title</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_title" class="form-control" required> 
+					<input type="text" name="product_title" class="form-control" required
+					value="<?php echo $p_title; ?>"> 
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
@@ -72,7 +82,7 @@ if (isset($_GET['edit_product'])) {
 			<label class="col-md-3 control-label">Products Category</label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<select name="product_cat" class="form-control">
-						<option>Select a Product Category</option>
+						<option value="<?php echo $p_cat; ?>"> <?php echo $p_cat_title; ?></option>
 		<?php
 			$get_p_cats= "SELECT * FROM product_categories";
 			$run_p_cats = mysqli_query($con, $get_p_cats);
@@ -97,7 +107,7 @@ if (isset($_GET['edit_product'])) {
 			<label class="col-md-3 control-label">Category</label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<select name="cat" class="form-control">
-						<option>Select a category</option>
+						<option value="<?php echo $cat; ?>"> <?php echo $p_cat_title; ?> </option>
 <?php
 			$get_cat= "SELECT * FROM categories";
 			$run_cat = mysqli_query($con, $get_cat);
@@ -122,6 +132,7 @@ if (isset($_GET['edit_product'])) {
 			<label class="col-md-3 control-label">Product Image 1</label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<input type="file" name="product_img1" class="form-control" required> 
+					<br><img src="product_images/<?php echo $p_image1; ?>" width="70" height="70">
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
@@ -129,6 +140,7 @@ if (isset($_GET['edit_product'])) {
 			<label class="col-md-3 control-label">Product Image 2</label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<input type="file" name="product_img2" class="form-control" required> 
+					<br><img src="product_images/<?php echo $p_image2; ?>" width="70" height="70">
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
@@ -136,27 +148,32 @@ if (isset($_GET['edit_product'])) {
 			<label class="col-md-3 control-label">Product Image 3</label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<input type="file" name="product_img3" class="form-control" required> 
+					<br><img src="product_images/<?php echo $p_image3; ?>" width="70" height="70">
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
 			<label class="col-md-3 control-label">Product Price</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_price" class="form-control" required> 
+					<input type="text" name="product_price" class="form-control" required
+					value="RM <?php echo $p_price; ?>"> 
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
 			<label class="col-md-3 control-label">Product Keywords</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_keywords" class="form-control" required> 
+					<input type="text" name="product_keywords" class="form-control" required
+					value="<?php echo $p_keywords; ?>"> 
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
 			<label class="col-md-3 control-label">Product Description</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<textarea name="product_desc" class="form-control" rows="6" cols="19"></textarea>
+					<textarea name="product_desc" class="form-control" rows="6" cols="19" >
+						<?php echo $p_desc; ?>
+					</textarea>
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
