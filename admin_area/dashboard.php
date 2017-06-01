@@ -115,7 +115,7 @@ else
 
 <div class="col-xs-9 text-right"><!-- col xs 9 text right starts -->
 <div class="huge"><?php echo "$count_pending_orders"; ?></div>
-<div>Orders</div>
+<div>Pending Orders</div>
 
 </div><!-- col xs 9 text right ends -->
 
@@ -255,7 +255,7 @@ View All Orders <i class="fa fa-arrow-circle-right"></i>
 <div class="panel-body"><!-- panel body starts -->
 <div class="thumb-info mb-md"><!-- thumb info starts -->
 <img src="images/admin.png" class="rounded img-responsive">
-
+<span class="thumb-info-title"><?php echo "$admin_name"; ?></span>
 
 </div><!-- thumb info title ends -->
 </div><!-- thumb info ends -->

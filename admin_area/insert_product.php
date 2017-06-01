@@ -1,10 +1,15 @@
-<?php include("includes/db.php"); ?>
+<?php 
+if (!isset($_SESSION['admin_email'])) {
+	echo "<script>window.open('login.php','_self')</script>";
+}
+else
+{
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Insert Products</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 		  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   		  <script>tinymce.init({ selector:'textarea' });</script>
 	</head>
@@ -183,8 +188,9 @@
 			if($run_product)
 			{
 				echo "<script>alert('Product has been inserted successfully');</script>";
-				echo "<script>alert('window.open('insert_product.php', '_self')');</script>";
+				echo "<script>alert('window.open('index.php?view_products', '_self')');</script>";
 			}
 	}
 
 ?>
+<?php } ?>

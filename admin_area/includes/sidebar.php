@@ -67,7 +67,7 @@ else
 
 <i class="fa fa-fw fa-envelope" ></i> Categories
 
-<span class="badge" ><?php echo $count_cats; ?></span>
+<span class="badge" ><?php echo $count_p_categories; ?></span>
 
 
 </a>
