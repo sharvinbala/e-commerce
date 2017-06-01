@@ -63,7 +63,7 @@ else
 
 <li><!-- li Starts -->
 
-<a href="index.php?view_products" >
+<a href="index.php?view_categories" >
 
 <i class="fa fa-fw fa-envelope" ></i> Categories
 
