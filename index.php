@@ -291,6 +291,18 @@ echo "
 
 		<div class="same-height-row"><!--same-height starts -->
 
+			<?php
+
+$get_boxes = "select * from boxes_section";
+$run_boxes = mysqli_query($con, $get_boxes);
+
+while ($run_boxes_section=mysqli_fetch_array($run_boxes)) {
+$box_id = $run_boxes_section['box_id'];
+$box_title = $run_boxes_section['box_title'];
+$box_desc = $run_boxes_section['box_desc'];
+
+?>
+
 			<div class="col-sm-4"><!--col sm 4 starts -->
 
 				<div class="box same-height"><!--box same-height starts-->
@@ -299,49 +311,16 @@ echo "
 						<i class="fa fa-heart"></i>
 					</div>
 
-				<h3><a href="#">WE LOVE OUR CUSTOMERS.</a></h3>	
+				<h3><a href="#"><?php echo "$box_title"; ?></a></h3>	
 					<p>
-						We are known to provide the best service.
+						<?php echo "$box_desc"; ?>
 					</p>
 
 				</div><!--box same-height ends-->
 
 			</div><!--col sm 4 ends -->
 
-
-			<div class="col-sm-4"><!--col sm 4 starts -->
-
-				<div class="box same-height"><!--box same-height starts-->
-
-					<div class="icon">
-						<i class="fa fa-tags"></i>
-					</div>
-
-				<h3><a href="#">BEST PRICES.</a></h3>	
-					<p>
-						We offer the best prices!
-					</p>
-
-				</div><!--box same-height ends-->
-
-			</div><!--col sm 4 ends -->
-
-			<div class="col-sm-4"><!--col sm 4 starts -->
-
-				<div class="box same-height"><!--box same-height starts-->
-
-					<div class="icon">
-						<i class="fa fa-thumbs-up"></i>
-					</div>
-
-				<h3><a href="#">100% SATISFACTION.</a></h3>	
-					<p>
-						Free return for the first 3 days!
-					</p>
-
-				</div><!--box same-height ends-->
-
-			</div><!--col sm 4 ends -->
+			<?php } ?>
 
 		</div><!--same-height ends -->
 
