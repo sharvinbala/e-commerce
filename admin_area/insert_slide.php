@@ -52,7 +52,7 @@ else {
 
 <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" ><!-- form-horizontal Starts -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- 1 form-group Starts -->
 
 <label class="col-md-3 control-label">Slide Name:</label>
 
@@ -62,9 +62,9 @@ else {
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- 1 form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- 2 form-group Starts -->
 
 <label class="col-md-3 control-label">Slide Image:</label>
 
@@ -74,9 +74,21 @@ else {
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- 2 form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" ><!-- 3 form-group Starts -->
+
+<label class="col-md-3 control-label">Slide URL:</label>
+
+<div class="col-md-6">
+
+<input type="text" name="slide_url" class="form-control" >
+
+</div>
+
+</div><!-- 3 form-group Ends -->
+
+<div class="form-group" ><!-- 4 form-group Starts -->
 
 <label class="col-md-3 control-label"></label>
 
@@ -86,7 +98,9 @@ else {
 
 </div>
 
-</div><!-- form-group Ends -->
+</div><!-- 4 form-group Ends -->
+
+
 
 
 </form><!-- form-horizontal Ends -->
@@ -111,6 +125,8 @@ $slide_image = $_FILES['slide_image']['name'];
 
 $temp_name = $_FILES['slide_image']['tmp_name'];
 
+$slide_url = $_POST['slide_url'];
+
 $view_slides = "select * from slider";
 
 $view_run_slides = mysqli_query($con,$view_slides);
@@ -121,7 +137,7 @@ if($count<4){
 
 move_uploaded_file($temp_name,"slides_images/$slide_image");
 
-$insert_slide = "insert into slider (slide_name,slide_image) values ('$slide_name','$slide_image')";
+$insert_slide = "insert into slider (slide_name,slide_image, slide_url) values ('$slide_name','$slide_image', '$slide_url')";
 
 $run_slide = mysqli_query($con,$insert_slide);
 
