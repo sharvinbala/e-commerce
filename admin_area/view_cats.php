@@ -59,7 +59,6 @@ else {
 
 <th>Category ID:</th>
 <th>Category Title:</th>
-<th>Category Description:</th>
 <th>Delete Category:</th>
 <th>Edit Category:</th>
 
@@ -85,7 +84,6 @@ $cat_id = $row_cats['cat_id'];
 
 $cat_title = $row_cats['cat_title'];
 
-$cat_desc = $row_cats['cat_desc'];
 
 $i++;
 
@@ -99,7 +97,6 @@ $i++;
 
 <td><?php echo $cat_title; ?></td>
 
-<td width="300" ><?php echo $cat_desc; ?></td>
 
 <td>
 

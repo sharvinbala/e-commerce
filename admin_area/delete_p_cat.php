@@ -24,7 +24,7 @@ $run_delete = mysqli_query($con,$delete_p_cat);
 
 if($run_delete){
 
-echo "<script>alert('Product category successfully deleted.)</script>";
+echo "<script>alert('One Product Category Has been Deleted')</script>";
 
 echo "<script>window.open('index.php?view_p_cats','_self')</script>";
 

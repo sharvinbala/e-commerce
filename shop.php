@@ -297,8 +297,9 @@
 					</center><!--center ends -->
 					
 						<?php 
-							getpcatpro();	
 							getcatpro();
+							getpcatpro();	
+							
 
 						?>					
 

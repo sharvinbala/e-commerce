@@ -48,7 +48,7 @@ else {
 
 <div class="panel-body"><!-- panel-body Starts -->
 
-<form class="form-horizontal" action="" method="post"><!-- form-horizontal Starts -->
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
 
 <div class="form-group"><!-- form-group Starts -->
 
@@ -64,14 +64,29 @@ else {
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">Category Description</label>
+<label class="col-md-3 control-label">Show as Category Top</label>
 
 <div class="col-md-6">
 
-<textarea type="text" name="cat_desc" class="form-control">
+<input type="radio" name="cat_top" value="yes">
 
+<label>Yes</label>
 
-</textarea>
+<input type="radio" name="cat_top" value="no">
+
+<label>No</label>
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group"><!-- form-group Starts -->
+
+<label class="col-md-3 control-label">Select Category Image</label>
+
+<div class="col-md-6">
+
+<input type="file" name="cat_image" class="form-control">
 
 </div>
 
@@ -105,9 +120,15 @@ if(isset($_POST['submit'])){
 
 $cat_title = $_POST['cat_title'];
 
-$cat_desc = $_POST['cat_desc'];
+$cat_top = $_POST['cat_top'];
 
-$insert_cat = "insert into categories (cat_title,cat_desc) values ('$cat_title','$cat_desc')";
+$cat_image = $_FILES['cat_image']['name'];
+
+$temp_name = $_FILES['cat_image']['tmp_name'];
+
+move_uploaded_file($temp_name,"other_images/$cat_image");
+
+$insert_cat = "insert into categories (cat_title,cat_top,cat_image) values ('$cat_title','$cat_top','$cat_image')";
 
 $run_cat = mysqli_query($con,$insert_cat);
 

@@ -27,8 +27,11 @@ $p_cat_id = $row_edit['p_cat_id'];
 
 $p_cat_title = $row_edit['p_cat_title'];
 
-$p_cat_desc = $row_edit['p_cat_desc'];
+$p_cat_top = $row_edit['p_cat_top'];
 
+$p_cat_image = $row_edit['p_cat_image'];
+
+$new_p_cat_image = $row_edit['p_cat_image'];
 
 }
 
@@ -73,7 +76,7 @@ $p_cat_desc = $row_edit['p_cat_desc'];
 
 <div class="panel-body" ><!-- panel-body Starts -->
 
-<form class="form-horizontal" action="" method="post" ><!-- form-horizontal Starts -->
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data" ><!-- form-horizontal Starts -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -89,13 +92,35 @@ $p_cat_desc = $row_edit['p_cat_desc'];
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" >Product Category Description</label>
+<label class="col-md-3 control-label" >Show as Top Product Category</label>
 
 <div class="col-md-6" >
 
-<textarea type="text" name="p_cat_desc" class="form-control" >
-<?php echo $p_cat_desc; ?>
-</textarea>
+<input type="radio" name="p_cat_top" value="yes" 
+<?php if($p_cat_top == 'no'){}else{ echo "checked='checked'"; } ?>>
+
+<label> Yes </label>
+
+<input type="radio" name="p_cat_top" value="no" 
+<?php if($p_cat_top == 'no'){ echo "checked='checked'"; }else{} ?>>
+
+<label> No </label>
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Select Product Category Image</label>
+
+<div class="col-md-6" >
+
+<input type="file" name="p_cat_image" class="form-control" >
+
+<br>
+
+<img src="other_images/<?php echo $p_cat_image; ?>" width="70" height="70" >
 
 </div>
 
@@ -107,15 +132,21 @@ $p_cat_desc = $row_edit['p_cat_desc'];
 
 <div class="col-md-6" >
 
-<input type="submit" name="update" value="Update" class="btn btn-primary form-control" >
+<input type="submit" name="update" value="Update Now" class="btn btn-primary form-control" >
 
 </div>
+
 </div><!-- form-group Ends -->
+
 </form><!-- form-horizontal Ends -->
+
 </div><!-- panel-body Ends -->
 
+
 </div><!-- panel panel-default Ends -->
+
 </div><!-- col-lg-12 Ends -->
+
 </div><!-- 2 row Ends -->
 
 <?php
@@ -124,10 +155,22 @@ if(isset($_POST['update'])){
 
 $p_cat_title = $_POST['p_cat_title'];
 
-$p_cat_desc = $_POST['p_cat_desc'];
+$p_cat_top = $_POST['p_cat_top'];
+
+$p_cat_image = $_FILES['p_cat_image']['name'];
+
+$temp_name = $_FILES['p_cat_image']['tmp_name'];
 
 
-$update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_desc='$p_cat_desc' where p_cat_id='$p_cat_id'";
+move_uploaded_file($temp_name,"other_images/$p_cat_image");
+
+if(empty($p_cat_image)){
+
+$p_cat_image = $new_p_cat_image;
+
+}
+
+$update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_top='$p_cat_top',p_cat_image='$p_cat_image' where p_cat_id='$p_cat_id'";
 
 $run_p_cat = mysqli_query($con,$update_p_cat);
 
@@ -139,7 +182,13 @@ echo "<script>window.open('index.php?view_p_cats','_self')</script>";
 
 }
 
+
+
 }
+
+
+
 ?>
+
 
 <?php } ?>

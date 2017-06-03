@@ -19,7 +19,7 @@ else {
 
 <li class="active">
 
-<i class="fa fa-dashboard"></i> Dashboard / View Product Categories
+<i class="fa fa-dashboard"></i> Dashboard / View Products Categories
 
 </li>
 
@@ -58,7 +58,6 @@ else {
 
 <th>Product Category Id</th>
 <th>Product Category Title</th>
-<th>Product Category Description</th>
 <th>Delete Product Category</th>
 <th>Edit Product Category</th>
 
@@ -83,7 +82,6 @@ $p_cat_id = $row_p_cats['p_cat_id'];
 
 $p_cat_title = $row_p_cats['p_cat_title'];
 
-$p_cat_desc = $row_p_cats['p_cat_desc'];
 
 $i++;
 
@@ -95,7 +93,6 @@ $i++;
 
 <td> <?php echo $p_cat_title; ?> </td>
 
-<td width="300"> <?php echo $p_cat_desc; ?> </td>
 
 <td> 
 
