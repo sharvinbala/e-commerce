@@ -300,23 +300,19 @@ while ($run_boxes_section=mysqli_fetch_array($run_boxes)) {
 $box_id = $run_boxes_section['box_id'];
 $box_title = $run_boxes_section['box_title'];
 $box_desc = $run_boxes_section['box_desc'];
-
+$box_image = $run_boxes_section['box_image'];
 ?>
 
 			<div class="col-sm-4"><!--col sm 4 starts -->
 
-				<div class="box same-height"><!--box same-height starts-->
-
-					<div class="icon">
-						<i class="fa fa-heart"></i>
-					</div>
-
-				<h3><a href="#"><?php echo "$box_title"; ?></a></h3>	
+												
 					<p>
-						<?php echo "$box_desc"; ?>
+						<?php echo "
+						<img src='admin_area/box_image/$box_image' width='300 height='250'> ";
+						?>
 					</p>
 
-				</div><!--box same-height ends-->
+				
 
 			</div><!--col sm 4 ends -->
 

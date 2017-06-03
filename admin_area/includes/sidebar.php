@@ -211,11 +211,29 @@ else
 <a href="index.php?view_cats"> View Categories </a>
 </li>
 
-
 </ul>
 
 </li><!-- li Ends -->
 
+<li><!-- boxes section li starts -->
+	<a href="#" data-toggle="collapse" data-target="#boxes"> 
+		<i class=" fa fa-fw fa-arrows"></i> Boxes Section
+		<i class="fa fa-fw fa-caret-down"></i>
+	</a>
+
+<ul id="boxes" class="collapse">
+
+<li>
+<a href="index.php?insert_box"> Insert Box</a>
+</li>
+
+<li>
+<a href="index.php?view_boxes"> View Boxes</a>
+</li>
+
+</ul>	
+
+</li><!-- boxes section li ends -->
 
 <li><!-- li Starts -->
 

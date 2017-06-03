@@ -133,7 +133,9 @@ $c_image_tmp = $_FILES['c_image']['tmp_name'];
 
 move_uploaded_file($c_image_tmp,"customer_images/$c_image");
 
-$update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_country='$c_country',customer_city='$c_city',customer_contact='$c_contact',customer_address='$c_address',customer_image='$c_image' where customer_id='$update_id'";
+$update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',
+customer_country='$c_country',customer_city='$c_city',customer_contact='$c_contact',
+customer_address='$c_address',customer_image='$c_image' where customer_id='$update_id'";
 
 $run_customer = mysqli_query($con,$update_customer);
 
