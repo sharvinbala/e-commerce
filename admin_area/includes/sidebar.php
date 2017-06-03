@@ -283,6 +283,11 @@ else
 
 </li><!-- terms li Ends -->
 
+<li><!-- edit css li starts -->
+<a href="index.php?edit_css">
+<i class="fa fa-fw fa-list"></i> Edit CSS
+</a>
+</li><!-- edit css li ends -->
 
 
 <li>
