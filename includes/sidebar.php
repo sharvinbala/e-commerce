@@ -103,7 +103,7 @@ Hide
 
 </div><!-- panel-body Ends -->
 
-<div class="panel-body scroll-menu"><!-- panel-body scroll-menu Starts -->
+<div class="panel-body" ><!-- panel-body scroll-menu Starts -->
 
 <ul class="nav nav-pills nav-stacked category-menu" id="dev-manufacturer"><!-- nav nav-pills nav-stacked category-menu Starts -->
 

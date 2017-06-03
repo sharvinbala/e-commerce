@@ -1,3 +1,12 @@
+/*
+
+Template : E commerce Store in php and mysqli with bootstrap 3
+Author Name : Mohammed Tahir Ahmed
+Author Email: sad.ahmed22224@gmail.com
+Theme URl : http://www.computerfever.com
+Version: 1.0
+
+*/
 
 /* General Styles */
 
@@ -337,6 +346,11 @@ padding: 5px 0;
 margin: 0;
 }
 
+.fixed-panel {
+  min-height: 10;
+  max-height: 10;
+  overflow-y: scroll;
+}
 
 /* Shop Products Styles */
 
@@ -505,3 +519,250 @@ font-size:12px;
 #copyright p {
 margin: 0;
 }
+
+
+/** Filter Styles **/
+
+.nav.category-menu{
+margin-top:-21px;
+}
+
+
+.scroll-menu{
+height:260px; 
+overflow-y:scroll;
+}
+
+.checkbox span{
+display:inline-block;
+vertical-align:middle;
+position:relative;
+padding-left:5px;
+}
+
+.checkbox span::before{
+content: "";
+display: inline-block;
+position:absolute;                            
+width:17px;
+height:17px;
+left: 0;
+margin-left: -20px;
+border: 2px solid #cccccc;
+border-radius:3px;
+background-color:#fff;
+transition:border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.checkbox span::after{
+display:inline-block;
+position:absolute;
+width:16px;
+height:16px;
+left:0;
+top:0;
+margin-left: -20px;
+padding-left:3px;
+padding-top:1px;
+font-size:11px;
+color:#555555;
+
+}
+
+.checkbox input[type="checkbox"]{
+opacity:0;
+z-index:1;
+cursor:pointer;
+
+}
+
+
+.checkbox input[type="checkbox"]:focus + span::before{
+
+outline: thin dotted;
+outline:5px auto;
+outline-offset: -2px;
+
+}
+
+.checkbox input[type="checkbox"]:checked + span::after{
+
+font-family: "FontAwesome";
+
+content: "\f00c";
+
+}
+
+.checkbox-primary input[type="checkbox"]:checked + span::before{
+
+background-color: #337ab7;
+
+border-color: #337ab7;
+
+}
+
+.checkbox-primary input[type="checkbox"]:checked + span::after{
+
+color: #fff;
+
+}
+
+
+
+
+/* Label Styles  */
+
+
+.label {
+
+text-decoration : none;
+
+position: absolute;
+
+top: 50px;
+
+padding-left:51px;
+
+z-index: 20;
+
+}
+
+
+.label .label-background {
+
+position: absolute;
+top:0;
+right:0;
+}
+
+.label .thelabel {
+
+position: relative;
+width: 100px;
+padding: 6px 50px 6px 15px;
+margin: 40px 50px 10px -71px;
+color: #fff;
+font-size:18px;
+font-weight:bold;
+background-color: #337ab7;
+text-shadow: 0px 1px 2px #bbb ;
+
+}
+
+.label .thelabel:before,
+.label .thelabel:after {
+content: '';
+position: absolute;
+width:0;
+height:0;
+}
+
+.label .thelabel:after {
+left: 0px;
+top: 100%;
+border-width : 5px 10px;
+border-style: solid;
+border-color: #2d7b6b #2d7b6b transparent transparent;
+}
+
+.label.sale {
+top: 0;
+
+}
+
+/* tick and cross icons styles */
+
+
+.tick1{
+font-size:18px !important;
+color:red;
+}
+
+.cross1{
+font-size:18px !important;
+color:red;
+}
+
+.tick2{
+font-size:18px !important;
+color:red;
+}
+
+.cross2{
+font-size:18px !important;
+color:red;
+}
+
+/* Password Strength Checker Styles */
+
+#meter_wrapper{
+border:1px solid grey;
+width:202px;
+height:20px;
+margin:0;
+border-radius:3px;
+
+}
+
+
+#meter{
+width:0px;
+height:18px;
+border-radius:2px;
+
+}
+
+
+#pass_type{
+font-size:15px;
+margin-top:10px;
+position:absolute;
+top:0;
+right:90px;
+margin-bottom:10%;
+color:grey;
+
+}
+
+
+
+/* Services Styles  */
+
+
+.services .col-md-4 {
+
+margin-left:3%;
+
+width:29%;
+
+}
+
+@media(max-width: 1000px){
+
+.services .col-md-4 {
+
+margin-left:2%;
+
+width:46%;
+
+}
+
+}
+
+
+@media(max-width: 800px){
+
+.services .col-md-4 {
+
+width:90%;
+
+}
+
+
+}
+
+
+
+
+
+

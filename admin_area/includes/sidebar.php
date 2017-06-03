@@ -157,10 +157,35 @@ else
 <a href="index.php?view_products"> View Products </a>
 </li>
 
-
 </ul>
 
 </li><!-- li Ends -->
+
+<li><!-- manufacturer li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#manufacturers"><!-- anchor Starts -->
+
+<i class="fa fa-fw fa-briefcase"></i> Manufacturers
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a><!-- anchor Ends -->
+
+<ul id="manufacturers" class="collapse"><!-- ul collapse Starts -->
+
+<li>
+<a href="index.php?insert_manufacturer"> Insert Manufacturer </a>
+</li>
+
+<li>
+<a href="index.php?view_manufacturers"> View Manufacturers </a>
+</li>
+
+</ul><!-- ul collapse Ends -->
+
+
+</li><!-- manufacturer li Ends -->
 
 
 <li><!-- li Starts -->
