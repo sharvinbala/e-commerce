@@ -194,6 +194,30 @@ include("edit_slide.php");
 
 }
 
+if(isset($_GET['insert_term'])){
+
+include("insert_term.php");
+
+}
+
+if(isset($_GET['view_terms'])){
+
+include("view_terms.php");
+
+}
+
+if(isset($_GET['delete_term'])){
+
+include("delete_term.php");
+
+}
+
+if(isset($_GET['edit_term'])){
+
+include("edit_term.php");
+
+}
+
 
 if(isset($_GET['view_customers'])){
 

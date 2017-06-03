@@ -235,22 +235,19 @@ else
 
 </li><!-- boxes section li ends -->
 
-<li><!-- li Starts -->
+<li><!-- slides li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#slides">
 
 <i class="fa fa-fw fa-gear"></i> Slides
 
 <i class="fa fa-fw fa-caret-down"></i>
-
-
 </a>
-
 <ul id="slides" class="collapse">
 
 <li>
 <a href="index.php?insert_slide"> Insert Slide </a>
-</li>
+</li><!-- slide li ends -->
 
 <li>
 <a href="index.php?view_slides"> View Slides </a>
@@ -260,6 +257,33 @@ else
 </ul>
 
 </li><!-- li Ends -->
+
+<li><!-- terms li Starts -->
+
+<a href="#" data-toggle="collapse" data-target="#terms" ><!-- anchor Starts -->
+
+<i class="fa fa-fw fa-table"></i> Terms
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+</a><!-- anchor Ends -->
+
+<ul id="terms" class="collapse"><!-- ul collapse Starts -->
+
+<li>
+<a href="index.php?insert_term"> Insert Terms </a> 
+</li>
+
+<li>
+<a href="index.php?view_terms"> View Terms </a> 
+</li>
+
+</ul><!-- ul collapse Ends -->
+
+
+</li><!-- terms li Ends -->
+
+
 
 <li>
 
