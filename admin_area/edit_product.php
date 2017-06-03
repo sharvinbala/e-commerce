@@ -30,6 +30,8 @@ $p_cat = $row_edit['p_cat_id'];
 
 $cat = $row_edit['cat_id'];
 
+$m_id = $row_edit['manufacturer_id'];
+
 $p_image1 = $row_edit['product_img1'];
 
 $p_image2 = $row_edit['product_img2'];
@@ -43,6 +45,14 @@ $p_desc = $row_edit['product_desc'];
 $p_keywords = $row_edit['product_keywords'];
 
 }
+
+$get_manufacturer = "select * from manufacturers where manufacturer_id='$m_id'";
+$run_manufacturer = mysqli_query($con, $get_manufacturer);
+$row_manufacturer = mysqli_fetch_array($run_manufacturer);
+
+$manufacturer_id = $row_manufacturer['manufacturer_id'];
+$manufacturer_title = $row_manufacturer['manufacturer_title'];
+
 
 $get_p_cat = "select * from product_categories where p_cat_id='$p_cat'";
 
@@ -130,6 +140,43 @@ $cat_title = $row_cat['cat_title'];
 
 </div><!-- form-group Ends -->
 
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Select Manufacturer </label>
+
+<div class="col-md-6" >
+
+<select name="manufacturer" class="form-control">
+<option value="<?php echo $manufacturer_id; ?>">
+<?php echo $manufacturer_title; ?>
+</option>
+
+<?php
+
+$get_manufacturer = "select * from manufacturers";
+$run_manufacturer = mysqli_query($con, $get_manufacturer);
+while ($row_manufacturer = mysqli_fetch_array($run_manufacturer)) {
+	$manufacturer_id = $row_manufacturer['manufacturer_id'];
+	$manufacturer_title = $row_manufacturer['manufacturer_title'];
+
+	echo "
+	<option value='$manufacturer_id'>
+	$manufacturer_title
+	</option>
+
+	";
+}
+
+?>
+
+</select>
+
+</div>
+
+</div><!-- form-group Ends -->
+
+
 <div class="form-group" ><!-- form-group Starts -->
 
 <label class="col-md-3 control-label" > Product Category </label>
@@ -167,6 +214,7 @@ echo "<option value='$p_cat_id' >$p_cat_title</option>";
 
 </div><!-- form-group Ends -->
 
+
 <div class="form-group" ><!-- form-group Starts -->
 
 <label class="col-md-3 control-label" > Category </label>
@@ -202,6 +250,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 </div>
 
 </div><!-- form-group Ends -->
+
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -316,6 +365,7 @@ if(isset($_POST['update'])){
 $product_title = $_POST['product_title'];
 $product_cat = $_POST['product_cat'];
 $cat = $_POST['cat'];
+$manufacturer_id = $_POST['manufacturer'];
 $product_price = $_POST['product_price'];
 $product_desc = $_POST['product_desc'];
 $product_keywords = $_POST['product_keywords'];
@@ -332,7 +382,11 @@ move_uploaded_file($temp_name1,"product_images/$product_img1");
 move_uploaded_file($temp_name2,"product_images/$product_img2");
 move_uploaded_file($temp_name3,"product_images/$product_img3");
 
-$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_desc='$product_desc',product_keywords='$product_keywords' where product_id='$p_id'";
+$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',
+manufacturer_id='$manufacturer_id',date=NOW(),
+product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',
+product_img3='$product_img3',product_price='$product_price',product_desc='$product_desc',
+product_keywords='$product_keywords' where product_id='$p_id'";
 
 $run_product = mysqli_query($con,$update_product);
 
