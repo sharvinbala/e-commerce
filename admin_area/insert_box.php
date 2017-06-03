@@ -49,7 +49,7 @@ else {
 
 <div class="panel-body"><!-- panel-body Starts -->
 
-<form class="form-horizontal" method="post" action=""><!-- form-horizontal Starts -->
+<form class="form-horizontal" method="post" action="" enctype="multipart/form-data"><!-- form-horizontal Starts -->
 
 <div class="form-group"><!-- 1 form-group Starts -->
 
@@ -122,6 +122,11 @@ $box_title = $_POST['box_title'];
 $box_desc = $_POST['box_desc'];
 
 $box_image = $row_boxes['box_image'];
+
+$box_image = $_FILES['box_image']['name'];
+$temp_name1 = $_FILES['box_image']['tmp_name'];
+move_uploaded_file($temp_name1, "box_image/$box_image");
+
 
 $insert_box = "insert into boxes_section (box_title,box_desc, box_image) values ('$box_title','$box_desc', '$box_image')";
 
