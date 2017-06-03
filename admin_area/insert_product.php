@@ -45,6 +45,29 @@ else
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
+			<label class="col-md-3 control-label">Select Manufacturer</label>
+				<div class="col-md-6"><!--col md 6 starts -->
+					<select class="form-control" name="manufacturer">
+						<option>Select a manufacturer</option>
+						<?php
+						$get_manufacturer = "select * from manufacturers";
+						$run_manufacturer = mysqli_query($con, $get_manufacturer);
+						while ($row_manufacturer = mysqli_fetch_array($run_manufacturer)) {
+							$manufacturer_id = $row_manufacturer['manufacturer_id'];
+							$manufacturer_title = $row_manufacturer['manufacturer_title'];
+
+							echo "<option value='$manufacturer_id'>
+							$manufacturer_title
+							</option>";
+						}
+						?>
+					</select>
+				</div><!--col md 6 ends -->
+		</div><!--form-group ends -->
+		
+
+
+		<div class="form-group"><!--form-group starts -->
 			<label class="col-md-3 control-label">Products Category</label>
 				<div class="col-md-6"><!--col md 6 starts -->
 					<select name="product_cat" class="form-control">
