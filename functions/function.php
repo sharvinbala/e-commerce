@@ -105,6 +105,11 @@ function getPro()
 		$pro_price = $row_products['product_price'];
 		$pro_img1 = $row_products['product_img1'];
 		$pro_label = $row_products['product_label'];
+		$manufacturer_id = $row_products['manufacturer_id'];
+		$get_manufacturer = "select * from  manufacturers where manufacturer_id = '$manufacturer_id'";
+		$run_manufacturer = mysqli_query($db, $get_manufacturer);
+		$row_manufacturer = mysqli_fetch_array($run_manufacturer);
+		$manufacturer_name = $row_manufacturer['manufacturer_title'];
 
 		if ($pro_label == "") {
 			
@@ -126,6 +131,11 @@ function getPro()
 					<img src='admin_area/product_images/$pro_img1' class='img-responsive'></img>
 				</a>
 					<div class='text'>
+					<center>
+					<hr>
+
+					
+					</center>
 						<h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
 							<p class='price'>RM $pro_price</p>
 							<p class='buttons'>
