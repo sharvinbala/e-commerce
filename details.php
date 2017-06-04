@@ -16,6 +16,21 @@ if(isset($_GET['pro_id']))
 	$pro_img1=$row_product['product_img1'];
 	$pro_img2=$row_product['product_img2'];
 	$pro_img3=$row_product['product_img3'];
+	$pro_label = $row_product['product_label'];
+
+	if ($pro_label == "") {
+			
+		}
+		else
+		{
+			$product_label = "
+			<a class='label sale' href='#' style='color:black;'>
+			<div class='thelabel'>$pro_label</div>
+			<div class='label-background'></div>
+			</a>
+			";
+		}
+
 	$get_p_cat="select * from product_categories where p_cat_id='$p_cat_id'";
 	$run_p_cat = mysqli_query($con, $get_p_cat);
 	$row_p_cat = mysqli_fetch_array($run_p_cat);
@@ -267,6 +282,9 @@ if(isset($_GET['pro_id']))
 				</a><!--right carousel control ends -->
 				</div><!--carousel inner ends -->
 			</div><!--mainImage ends -->
+
+			<?php echo $product_label; ?>
+
 		</div><!--col-sm-6 ends -->
 
 		<div class="col-sm-6"><!--col-sm-6 starts -->
