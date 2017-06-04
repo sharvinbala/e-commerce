@@ -256,7 +256,7 @@ if(isset($_GET['pro_id']))
 						<div class="carousel-inner"><!--carousel inner starts -->
 							<div class="item active"><!--item active ends -->
 								<center>
-									<img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">	
+									<img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive" style="padding-top: 1px">	
 								</center>
 							</div><!--item active ends -->
 								<div class="item"><!--item active ends -->
