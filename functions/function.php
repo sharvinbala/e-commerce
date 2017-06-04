@@ -110,6 +110,16 @@ function getPro()
 		$run_manufacturer = mysqli_query($db, $get_manufacturer);
 		$row_manufacturer = mysqli_fetch_array($run_manufacturer);
 		$manufacturer_name = $row_manufacturer['manufacturer_title'];
+		$pro_psp_price = $row_products['product_psp_price'];
+
+		if($pro_label == "Sale" or $pro_label == "Promo"){
+		$product_price = "<del> $pro_price </del>";
+		$product_psp_price = "| RM $pro_psp_price";
+		}
+		else{
+		$product_psp_price = "";
+		$product_price = "$pro_price";
+		}
 
 		if ($pro_label == "") {
 			
@@ -137,7 +147,7 @@ function getPro()
 					
 					</center>
 						<h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
-							<p class='price'>RM $pro_price</p>
+							<p class='price'>RM $product_price $product_psp_price</p>
 							<p class='buttons'>
 								<a href='details.php?pro_id=$pro_id' class='btn btn-default'>View Details</a>
 								<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
