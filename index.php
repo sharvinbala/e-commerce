@@ -187,9 +187,9 @@
 	</div> <!--Navbar default ends -->	
 </div><!--Navbar default ends -->
 
-<div class="container" id="slider" style= "max-width:1000px;"><!-- container Starts -->
+<div class="container-fluid" id="slider" style= "max-width:900px;" ><!-- container Starts -->
 
-<div class="col-md-12"><!-- col-md-12 Starts -->
+<div class="col-md-12" ><!-- col-md-12 Starts -->
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Starts --->
 
@@ -301,6 +301,7 @@ $box_id = $run_boxes_section['box_id'];
 $box_title = $run_boxes_section['box_title'];
 $box_desc = $run_boxes_section['box_desc'];
 $box_image = $run_boxes_section['box_image'];
+$box_url = $run_boxes_section['box_url'];
 ?>
 
 			<div class="col-sm-4"><!--col sm 4 starts -->
@@ -308,7 +309,11 @@ $box_image = $run_boxes_section['box_image'];
 												
 					<p>
 						<?php echo "
-						<img src='admin_area/box_image/$box_image' width='300 height='250'> ";
+						<a href='$box_url'>
+						<img src='admin_area/box_image/$box_image' width='300 height='250'> 
+						</a>
+						";
+
 						?>
 					</p>
 

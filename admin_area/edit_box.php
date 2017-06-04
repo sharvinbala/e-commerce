@@ -32,6 +32,8 @@ $box_desc = $row_boxes['box_desc'];
 
 $box_image = $row_boxes['box_image'];
 
+$box_url = $row_boxes['box_url'];
+
 }
 
 
@@ -107,13 +109,27 @@ $box_image = $row_boxes['box_image'];
 
 <div class="col-md-6">
 
-<input type="file" name="box_image_new" class="form-control" >
+<input type="file" name="box_image_new" class="form-control" required>
 <br>
 <img src="box_image/<?php echo $box_image; ?>" width="70" height="70" >
 
 </div>
 
 </div><!-- form-group Ends -->
+
+<div class="form-group"><!-- 2 form-group Starts -->
+
+<label class="col-md-3 control-label">Box URL : </label>
+
+<div class="col-md-6">
+
+<input type="text" class="form-control" name="box_url" value="<?php echo $box_url; ?>" >
+
+</div>
+
+</div><!-- 2 form-group Ends -->
+
+
 
 <div class="form-group"><!-- 3 form-group Starts -->
 
@@ -146,6 +162,8 @@ $box_title = $_POST['box_title'];
 
 $box_desc = $_POST['box_desc'];
 
+$box_url = $_POST['box_url'];
+
 $box_images = $_FILES['box_image_new']['name'];
 
 $temp_name = $_FILES['box_image_new']['tmp_name'];
@@ -153,7 +171,7 @@ $temp_name = $_FILES['box_image_new']['tmp_name'];
 move_uploaded_file($temp_name,"box_image/$box_images");
 
 $update_box = "update boxes_section set box_title='$box_title', box_desc='$box_desc',
-box_image='$box_images' where box_id='$box_id'";
+box_image='$box_images', box_url='$box_url' where box_id='$box_id'";
 
 $run_box = mysqli_query($con,$update_box);
 

@@ -83,12 +83,21 @@ else {
 
 <div class="col-md-6">
 
-<input type="file" name="box_image" class="form-control">
+<input type="file" name="box_image" class="form-control" required>
 
 </div>
 
 </div><!-- 3 form-group Ends -->
 
+
+<div class="form-group"><!-- form-group Starts -->
+
+<label class="col-md-3 control-label"> URL : </label>
+
+<div class="col-md-6"><!-- col-md-6 Starts -->
+
+<input type="text" name="url_link" class="form-control" required >
+<br>
 
 <div class="form-group"><!-- 4 form-group Starts -->
 
@@ -122,13 +131,14 @@ $box_title = $_POST['box_title'];
 $box_desc = $_POST['box_desc'];
 
 $box_image = $row_boxes['box_image'];
+$box_url = $row_boxes['box_url'];
 
 $box_image = $_FILES['box_image']['name'];
 $temp_name1 = $_FILES['box_image']['tmp_name'];
 move_uploaded_file($temp_name1, "box_image/$box_image");
 
 
-$insert_box = "insert into boxes_section (box_title,box_desc, box_image) values ('$box_title','$box_desc', '$box_image')";
+$insert_box = "insert into boxes_section (box_title,box_desc, box_image, box_url) values ('$box_title','$box_desc', '$box_image', '$box_url')";
 
 $run_box = mysqli_query($con,$insert_box);
 
