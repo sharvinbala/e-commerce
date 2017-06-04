@@ -202,108 +202,33 @@
 		</div><!-- col md 3 ends -->
 		<!--copy till here -->
 			<div class="col-md-9"><!-- col md 9 starts -->
-				<?php 
-					if(!isset($_GET['p_cat']))
-					{
-						if(!isset($_GET['cat']))
-						{
-							echo "
-								<div class='box'>	
-									<h1>Shop</h1>
-									<p>Explore our products at a great price!</p>
-								</div>	
-							";
-						}
-					}
-				?>
-					<div class="row"><!-- row starts -->
-						<?php
-							if(!isset($_GET['p_cat']))
-							{
-								if(!isset($_GET['cat']))
-								{
-									$per_page = 6;
-
-									if (isset($_GET['page'])) {
-										$page = $_GET['page'];
-									}
-									else
-									{
-										$page=1;
-									}
-							
-							$start_from = ($page-1) * $per_page ;
-							$get_products = "select * from products order by 1 DESC LIMIT $start_from, $per_page";
-							$run_products = mysqli_query($con, $get_products);
-
-							while ($row_products=mysqli_fetch_array($run_products)) {
-								$pro_id = $row_products['product_id'];
-								$pro_title = $row_products['product_title'];
-								$pro_price = $row_products['product_price'];
-								$pro_img1 = $row_products['product_img1'];
-
-								echo "
-									<div class='col-md-4 col-sm-6 center-responsive'>
-										<div class='product'>
-											<a href='details.php?pro_id=$pro_id'>
-											<img src='admin_area/product_images/$pro_img1' class='img-responsive'>
-											</a>
-											<div class='text'>
-												<h3><a href='details.php?pro_id=$pro_id'> $pro_title</a></h3>
-												<p class='price'>RM $pro_price</p>
-												<p class='buttons'>
-													<a href='details.php?pro_id=$pro_id' class='btn btn-default'>View Details</a>
-													<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
-														<i class='fa fa-shopping-cart'></i>Add to cart
-													</a>
-												</p>
-											</div>
-
-										</div>
-									</div>
-								";
-							}
-						?>
+				<div class="box">
+					<h1>Shop</h1>
+					<p>Browse through our products and enjoy our special promotions!</p>
+				</div>
+					<div class="row" id="Products"><!-- row starts -->
+						
 					</div><!-- row ends -->
 
 					<center><!--center starts -->
 						<ul class="pagination"><!--pagination starts -->
-							<?php 	
-							$query = "select * from products";
-							$results = mysqli_query($con, $query);
-							$total_records = mysqli_num_rows($results);
-							$total_pages = ceil($total_records/$per_page);
-
-							echo "
-							<li><a href='shop.php?page=1'>".'First Page'."</a></li>
-
-							";
-							for ($i=1;$i<=$total_pages;$i++) { 
-								echo "
-								<li><a href='shop.php?page=".$i."'>".$i."</a></li>
-
-								";
-							};
-
-							echo "
-								<li><a href='shop.php?page=$total_pages'>".'Last Page'."</a></li>
-							";
-
-							}
-							}
-							?>
+							
 
 						</ul><!--pagination ends -->
 					</center><!--center ends -->
 					
 						<?php 
-							getcatpro();
-							getpcatpro();	
-							
+							getcatpro();				
 
 						?>					
 
 			</div><!-- col md 9 ends -->
+
+			<div id="wait" style="position:absolute; top: 40%; left:45%; padding:100px; padding-top
+			: 200px;"><!-- wait starts -->
+
+
+			</div><!-- wait ends -->
 
 			<!--Footer starts officially -->
 		</div><!-- container ends -->
