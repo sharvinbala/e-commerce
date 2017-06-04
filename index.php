@@ -187,7 +187,7 @@
 	</div> <!--Navbar default ends -->	
 </div><!--Navbar default ends -->
 
-<div class="container" id="slider"><!-- container Starts -->
+<div class="container" id="slider" style= "max-width:1000px;"><!-- container Starts -->
 
 <div class="col-md-12"><!-- col-md-12 Starts -->
 
