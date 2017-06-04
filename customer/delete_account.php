@@ -22,7 +22,7 @@ if($run_delete){
 
 session_destroy();
 
-echo "<script>alert('Your Account Has Been Deleted! Good By')</script>";
+echo "<script>alert('Your Account Has Been Deleted! Good Bye!')</script>";
 
 echo "<script>window.open('../index.php','_self')</script>";
 

@@ -104,6 +104,20 @@ function getPro()
 		$pro_title = $row_products['product_title'];
 		$pro_price = $row_products['product_price'];
 		$pro_img1 = $row_products['product_img1'];
+		$pro_label = $row_products['product_label'];
+
+		if ($pro_label == "") {
+			
+		}
+		else
+		{
+			$product_label = "
+			<a class='label sale' href='#' style='color:black;'>
+			<div class='thelabel'>$pro_label</div>
+			<div class='label-background'></div>
+			</a>
+			";
+		}
 
 		echo "
 		<div class='col-md-4 col-sm-6 single'>
@@ -121,6 +135,9 @@ function getPro()
 								</a>	
 							</p>
 					</div>
+					$product_label
+
+
 			</div>	
 		</div>
 		";

@@ -1,12 +1,3 @@
-/*
-
-Template : E commerce Store in php and mysqli with bootstrap 3
-Author Name : Mohammed Tahir Ahmed
-Author Email: sad.ahmed22224@gmail.com
-Theme URl : http://www.computerfever.com
-Version: 1.0
-
-*/
 
 /* General Styles */
 
@@ -637,15 +628,15 @@ top:0;
 right:0;
 }
 
-.label .thelabel {
-
+.label .thelabel { 
+/* change label color here */
 position: relative;
 width: 100px;
 padding: 6px 50px 6px 15px;
 margin: 40px 50px 10px -71px;
 color: #fff;
 font-size:18px;
-font-weight:bold;
+font-weight:normal;
 background-color: #337ab7;
 text-shadow: 0px 1px 2px #bbb ;
 

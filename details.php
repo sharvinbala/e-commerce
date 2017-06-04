@@ -226,13 +226,7 @@ if(isset($_GET['pro_id']))
 			</ul><!-- breadcrumb starts -->
 		</div><!-- col md 12 ends -->
 
-		<div class="col-md-3"><!-- col md 3 starts -->
-			<?php
-				include("includes/sidebar.php");
-			?>
-		</div><!-- col md 3 ends -->
-
-<div class="col-md-9"><!--col-md-9 starts -->
+<div class="col-md-12"><!--col-md-12 starts -->
 	<div class="row" id="productMain"><!--row starts -->
 		<div class="col-sm-6"><!--col-sm6 starts -->
 			<div id="mainImage"><!--mainImage starts -->
