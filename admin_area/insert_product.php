@@ -229,7 +229,8 @@ else
 			if($run_product)
 			{
 				echo "<script>alert('Product has been inserted successfully');</script>";
-				echo "<script>alert('window.open('index.php?view_products', '_self')');</script>";
+				echo "<script>window.open('index.php?view_products','_self')</script>";
+				
 			}
 	}
 
