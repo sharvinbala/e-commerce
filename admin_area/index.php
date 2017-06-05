@@ -338,6 +338,30 @@ include("edit_box.php");
 
 }
 
+if(isset($_GET['insert_coupon'])){
+
+include("insert_coupon.php");
+
+}
+
+if(isset($_GET['view_coupon'])){
+
+include("view_coupon.php");
+
+}
+
+if(isset($_GET['edit_coupon'])){
+
+include("edit_coupon.php");
+
+}
+
+if(isset($_GET['delete_coupon'])){
+
+include("delete_coupon.php");
+
+}
+
 
 ?>
 

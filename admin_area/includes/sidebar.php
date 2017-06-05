@@ -260,6 +260,27 @@ else
 
 </li><!-- boxes section li ends -->
 
+<li><!-- coupon section li starts -->
+<a href="#" data-toggle="collapse" data-target="#coupons"><!-- anchor starts -->
+<i class=" fa fa-fw fa-arrows-v"></i>Coupons
+<i class=" fa fa-fw fa-caret-down"></i>
+</a><!-- anchor ends -->
+
+<ul id="coupons" class="collapse"><!-- collapse starts -->
+
+<li>
+<a href="index.php?insert_coupon">Insert Coupon</a>
+</li>
+
+<li>
+<a href="index.php?insert_coupon">View Coupon</a>
+</li>
+
+</ul><!-- collapse ends -->
+
+</li><!-- coupon section li ends -->
+
+
 <li><!-- slides li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#slides">
