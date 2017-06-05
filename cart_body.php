@@ -2,17 +2,6 @@
 <?php include ("includes/db.php"); ?>
 <?php include ("functions/function.php"); ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Hitech Infinity</title>
-
-<link href="http://fonts.googleapis.com/css?family=Roboto:500,500,700,300,100" rel="stylesheet">
-<link href="styles/bootstrap.min.css" rel="stylesheet">
-<link href="styles/style.css" rel="stylesheet">
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-</head>
-
 <body>
 <div id="top"><!--top starts -->
 	<div class="container"> <!--Container starts -->
@@ -220,7 +209,6 @@
 
 										<?php
 											$total = 0;
-
 											while ($row_cart=mysqli_fetch_array($run_cart)) {
 											$pro_id = $row_cart['p_id'];											
 											$pro_qty = $row_cart['qty'];
@@ -244,12 +232,12 @@
 											<td>
 												<a href="#"><?php echo $product_title; ?></a>
 											</td>	
-											
 											<td>
-											<input type="text" name="quantity" value="<?php echo $_SESSION['pro_qty']; ?>" 
-											data-product_id="<?php echo $pro_id; ?>" class="quantity form-control">
+												<input type="text" name="quantity" 
+												value="<?php $_SESSION['pro_qty']; ?>"
+												data-product_id="<?php $pro_id; ?>" class="quantity
+												form-control">
 											</td>
-
 											<td>
 												RM <?php echo $only_price; ?>
 											</td>		
@@ -436,5 +424,39 @@ while ($row_products=mysqli_fetch_array($run_products)) {
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
-	</body>
-	</html>
+<script>
+
+$(document).ready(function(data){
+
+$(document).on('keyup', '.quantity', function(){
+
+var id = $(this).data("product_id");
+
+var quantity = $(this).val();
+
+if(quantity  != ''){
+
+$.ajax({
+
+url:"change.php",
+
+method:"POST",
+
+data:{id:id, quantity:quantity},
+
+success:function(data){
+
+$("body").load('cart_body.php');
+
+}
+
+});
+
+}
+
+});
+
+});
+
+</script>
+</body>
