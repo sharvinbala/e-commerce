@@ -273,7 +273,7 @@ else
 </li>
 
 <li>
-<a href="index.php?insert_coupon">View Coupon</a>
+<a href="index.php?view_coupon">View Coupon</a>
 </li>
 
 </ul><!-- collapse ends -->

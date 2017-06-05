@@ -32,7 +32,7 @@ else
 </div><!-- panel heading ends -->
 <div class="panel-body"><!-- panel body starts -->
 
-<form class="form-horizontal" method="post" enctype="multipart/form-data" action="">
+<form class="form-horizontal" method="post" action="">
 
 <div class="form-group"><!-- form group starts -->
 <label class="col-md-3 control-label"> Coupon Title</label>
@@ -98,6 +98,41 @@ value="Insert Coupon">
 </div><!-- panel default ends -->
 </div><!-- col lg 12 ends -->
 </div><!-- 2 row ends -->
+<?php
 
+if (isset($_POST['submit'])) {
+	$coupon_title = $_POST['coupon_title'];
+	$coupon_price = $_POST['coupon_price'];
+	$coupon_code = $_POST['coupon_code'];
+	$coupon_limit = $_POST['coupon_limit'];
+	$product_id = $_POST['product_id'];
+	$coupon_used = 0;
+
+	$get_coupons = "select * from coupons where product_id='$product_id'
+	or coupon_code='$coupon_code'";
+	$run_coupons = mysqli_query($con, $get_coupons);
+
+	$check_coupons = mysqli_num_rows($run_coupons);
+
+	if ($check_coupons==1) {
+		echo "<script>alert('Coupon code or product is alread add. Please
+			choose another coupon code or Product.')</script>";
+	}
+	else{
+		
+$insert_coupon = "insert into coupons (product_id,coupon_title,coupon_price,coupon_code,coupon_limit,
+coupon_used) values ('$product_id','$coupon_title','$coupon_price','$coupon_code',
+'$coupon_limit','$coupon_used')";
+
+		$run_coupon = mysqli_query($con, $insert_coupon);
+
+		if ($run_coupon) {
+			echo "<scrip>alert('New coupon has been inserted.')</script>";
+			echo "<script>window.open('index.php?view_coupon','_self')</script>";
+		}
+	}
+}
+
+?>
 
 <?php } ?>

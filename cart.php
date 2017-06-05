@@ -499,7 +499,7 @@ while ($row_products=mysqli_fetch_array($run_products)) {
 						<tbody>
 							<tr>
 								<td>Order Subtotal</td>	
-								<th>RM <?php echo $total; ?>.00</th>
+								<th>RM <?php echo $total; ?></th>
 							</tr>
 							<tr>
 								<td>Shipping & Handling</td>
@@ -511,7 +511,7 @@ while ($row_products=mysqli_fetch_array($run_products)) {
 							</tr>
 							<tr class="total">
 								<td>Total</td>
-								<th>RM <?php echo $total; ?>.00</th>
+								<th>RM <?php echo $total; ?></th>
 							</tr>
 						</tbody>
 					</table><!--table ends -->
