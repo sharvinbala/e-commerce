@@ -2,11 +2,18 @@
 <?php include ("includes/db.php"); ?>
 <?php include ("functions/function.php");
 
-if(isset($_GET['pro_id']))
-{
 	$product_id = $_GET['pro_id'];
-	$get_product = "select * from products where product_id='$product_id'";
+	$get_product = "select * from products where product_url='$product_id'";
 	$run_product=mysqli_query($con, $get_product);
+
+	$check_product = mysqli_num_rows($run_product);
+
+	if ($check_product == 0) {
+		echo "<script>window.open('index.php','_self')</script>";
+	}
+	else
+	{
+
 	$row_product = mysqli_fetch_array($run_product);
 
 	$p_cat_id=$row_product['p_cat_id'];
@@ -36,7 +43,7 @@ if(isset($_GET['pro_id']))
 	$run_p_cat = mysqli_query($con, $get_p_cat);
 	$row_p_cat = mysqli_fetch_array($run_p_cat);
 	$p_cat_title = $row_p_cat['p_cat_title'];
-}
+
  ?>
 
 <!DOCTYPE html>
@@ -392,6 +399,7 @@ else
 		$row_manufacturer = mysqli_fetch_array($run_manufacturer);
 		$manufacturer_name = $row_manufacturer['manufacturer_title'];
 		$pro_psp_price = $row_products['product_psp_price'];
+		$pro_url = $row_products['product_url'];
 
 		if($pro_label == "Sale" or $pro_label == "Promo!"){
 		$product_price = "<del> $pro_price </del>";
@@ -418,7 +426,7 @@ else
 		echo "
 		<div class='col-md-3 col-sm-6 center-responsive'>
 			<div class='product'>
-				<a href='details.php?pro_id=$pro_id'>
+				<a href='$pro_url''>
 					<img src='admin_area/product_images/$pro_img1' class='img-responsive'></img>
 				</a>
 					<div class='text'>
@@ -427,11 +435,11 @@ else
 
 					
 					</center>
-						<h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+						<h3><a href='$pro_url'>$'pro_title</a></h3>
 							<p class='price'>RM $product_price $product_psp_price</p>
 							<p class='buttons'>
-								<a href='details.php?pro_id=$pro_id' class='btn btn-default'>View Details</a>
-								<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
+								<a href='$pro_url' class='btn btn-default'>View Details</a>
+								<a href='$pro_url' class='btn btn-primary'>
 									<i class='fa fa-shopping-cart'></i>Add to cart
 								</a>	
 							</p>
@@ -459,3 +467,5 @@ include ("includes/footer.php")
 
 </body>
 </html>
+
+<?php } ?>

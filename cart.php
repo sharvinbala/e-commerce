@@ -430,6 +430,7 @@ while ($row_products=mysqli_fetch_array($run_products)) {
 		$row_manufacturer = mysqli_fetch_array($run_manufacturer);
 		$manufacturer_name = $row_manufacturer['manufacturer_title'];
 		$pro_psp_price = $row_products['product_psp_price'];
+		$pro_url = $row_products['product_url'];
 
 		if($pro_label == "Sale" or $pro_label == "Promo!"){
 		$product_price = "<del> $pro_price </del>";
@@ -456,20 +457,19 @@ while ($row_products=mysqli_fetch_array($run_products)) {
 		echo "
 		<div class='col-md-3 col-sm-6 center-responsive'>
 			<div class='product'>
-				<a href='details.php?pro_id=$pro_id'>
+				<a href='$pro_url'>
 					<img src='admin_area/product_images/$pro_img1' class='img-responsive'></img>
 				</a>
 					<div class='text'>
 					<center>
 					<hr>
-
 					
 					</center>
-						<h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+						<h3><a href='$pro_url'>$pro_title</a></h3>
 							<p class='price'>RM $product_price $product_psp_price</p>
 							<p class='buttons'>
-								<a href='details.php?pro_id=$pro_id' class='btn btn-default'>View Details</a>
-								<a href='details.php?pro_id=$pro_id' class='btn btn-primary'>
+								<a href='$pro_url' class='btn btn-default'>View Details</a>
+								<a href='$pro_url' class='btn btn-primary'>
 									<i class='fa fa-shopping-cart'></i>Add to cart
 								</a>	
 							</p>
