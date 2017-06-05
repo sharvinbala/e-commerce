@@ -37,7 +37,27 @@ function add_cart()
 		}
 		else
 		{
-			$query = "insert into cart (p_id, ip_add, qty) values ('$p_id','$ip_add','$product_qty')";
+			$get_price = "select * from products where product_id
+			='$p_id'";
+			$run_price = mysqli_query($db, $get_price);
+			$row_price = mysqli_fetch_array($run_price);
+
+			$pro_price = $row_price['product_price'];
+			$pro_psp_price = $row_price['product_psp_price'];
+			$pro_label = $row_price['product_label'];
+
+			if ($pro_label == "Sale" or $pro_label == "Promo!")
+			{
+				$product_price = $pro_psp_price;
+			}
+			else
+			{
+
+				$product_price = $pro_price;
+			}			
+
+			$query = "insert into cart (p_id, ip_add, qty, p_price) values 
+			('$p_id','$ip_add','$product_qty', '$product_price')";
 			$run_query = mysqli_query($db, $query);
 			echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
 		}
@@ -59,13 +79,9 @@ function total_price()
 	while ($record=mysqli_fetch_array($run_cart)) {
 		$pro_id=$record['p_id'];
 		$pro_qty = $record['qty'];
-		$get_price = "select * from products where product_id='$pro_id'";
-		$run_price = mysqli_query($db, $get_price);
-
-		while ($row_price=mysqli_fetch_array($run_price)) {
-			$sub_total = $row_price['product_price'] * $pro_qty;
-			$total += $sub_total;
-		}
+		$sub_total = $record['p_price'] * $pro_qty;
+		$total += $sub_total;
+		
 	}
 
 	echo "RM" . $total;

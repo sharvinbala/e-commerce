@@ -223,14 +223,16 @@
 											while ($row_cart=mysqli_fetch_array($run_cart)) {
 											$pro_id = $row_cart['p_id'];											
 											$pro_qty = $row_cart['qty'];
+											$only_price = $row_cart['p_price'];
 											$get_products = "select * from products where product_id='$pro_id'";
 											$run_products = mysqli_query($con, $get_products);
 
 											while ($row_products = mysqli_fetch_array($run_products)) {
 												$product_title = $row_products['product_title'];
-												$product_img1 = $row_products['product_img1'];
-												$only_price = $row_products['product_price'];
-												$sub_total = $row_products['product_price'] * $pro_qty;
+												$product_img1 = $row_products['product_img1'];												
+												$sub_total = $only_price* $pro_qty;
+												$_SESSION['pro_qty'] = $pro_qty;
+
 												$total += $sub_total;
 										?>
 
@@ -242,7 +244,10 @@
 												<a href="#"><?php echo $product_title; ?></a>
 											</td>	
 											<td>
-												<?php echo $pro_qty; ?>
+												<input type="text" name="quantity" 
+												value="<?php $_SESSION['pro_qty']; ?>"
+												data-product_id="<?php $pro_id; ?>" class="quantity
+												form-control">
 											</td>
 											<td>
 												RM <?php echo $only_price; ?>
