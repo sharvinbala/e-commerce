@@ -48,6 +48,8 @@ $psp_price = $row_edit['product_psp_price'];
 
 $p_label = $row_edit['product_label'];
 
+$p_url = $row_edit['product_url'];
+
 }
 
 $get_manufacturer = "select * from manufacturers where manufacturer_id='$m_id'";
@@ -144,6 +146,17 @@ $cat_title = $row_cat['cat_title'];
 
 </div><!-- form-group Ends -->
 
+<div class="form-group"><!--form-group starts -->
+			<label class="col-md-3 control-label">Products URL</label>
+				<div class="col-md-6"><!--col md 6 starts -->
+					<input type="text" name="product_url" class="form-control" required
+					value="<?php echo $p_url; ?>"> 
+					<br>
+					<p style="font-size:15px; font-weight: bold;">
+						Product URL Example: disposable-basic-set-254
+					</p>
+				</div><!--col md 6 ends -->
+		</div><!--form-group ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -402,6 +415,7 @@ $product_desc = $_POST['product_desc'];
 $product_keywords = $_POST['product_keywords'];
 $psp_price = $_POST['psp_price'];
 $product_label = $_POST['product_label'];
+$product_url = $_POST['product_url'];
 
 $product_img1 = $_FILES['product_img1']['name'];
 $product_img2 = $_FILES['product_img2']['name'];
@@ -417,7 +431,7 @@ move_uploaded_file($temp_name3,"product_images/$product_img3");
 
 $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',
 manufacturer_id='$manufacturer_id',date=NOW(),
-product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',
+product_title='$product_title', product_url='$product_url',product_img1='$product_img1',product_img2='$product_img2',
 product_img3='$product_img3',product_price='$product_price', product_psp_price='$psp_price',product_desc='$product_desc',
 product_keywords='$product_keywords', product_label='$product_label' where product_id='$p_id'";
 

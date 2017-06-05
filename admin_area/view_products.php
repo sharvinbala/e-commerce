@@ -40,6 +40,7 @@ else
 <tr>
 <th>Product ID</th>
 <th>Product Title</th>
+<th>Product URL</th>
 <th>Product Image</th>
 <th>Product Price</th>
 <th>Product Sold</th>
@@ -65,12 +66,15 @@ $pro_image = $row_pro['product_img1'];
 $pro_price = $row_pro['product_price'];
 $pro_keywords = $row_pro['product_keywords'];
 $pro_date = $row_pro['date'];
+$product_url = $row_pro['product_url'];
+
 $i++;
 ?>
 
 <tr>
 <td><?php echo $i; ?> </td>
 <td><?php echo $pro_title; ?> </td>
+<td><?php echo $product_url; ?> </td>
 <td><img src="product_images/<?php echo $pro_image; ?>" width="60" height="60>" </td>
 <td>RM <?php echo $pro_price; ?> </td>
 <td>
