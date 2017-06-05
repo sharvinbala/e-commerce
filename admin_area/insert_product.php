@@ -146,9 +146,9 @@ else
 		</div><!--form-group ends -->
 
 		<div class="form-group"><!--form-group starts -->
-			<label class="col-md-3 control-label">Discount Price</label>
+			<label class="col-md-3 control-label">Product Discount</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="psp_price" class="form-control" required> 
+					<input type="text" class="form-control" name="psp_price"></textarea>
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
@@ -169,7 +169,7 @@ else
 		<div class="form-group"><!--form-group starts -->
 			<label class="col-md-3 control-label">Product Label</label>
 				<div class="col-md-6"><!--col md 6 starts -->
-					<input type="text" name="product_label" class="form-control" required> 
+					<input type="text" name="product_label" class="form-control"></textarea>
 				</div><!--col md 6 ends -->
 		</div><!--form-group ends -->
 
@@ -200,9 +200,9 @@ else
 		$cat= $_POST['cat'];
 		$manufacturer_id = $_POST['manufacturer'];
 		$product_price = $_POST['product_price'];
+		$psp_price = $_POST['product_psp_price'];
 		$product_desc = $_POST['product_desc'];
 		$product_keywords = $_POST['product_keywords'];
-		$psp_price = $_POST['product_psp_price'];
 		$product_label = $_POST['product_label'];
 
 		$product_img1 = $_FILES['product_img1']['name'];
@@ -218,9 +218,11 @@ else
 		move_uploaded_file($temp_name3, "product_images/$product_img3");
 
 		$insert_product = "INSERT INTO products (p_cat_id, cat_id, manufacturer_id, date, product_title,
-			product_img1, product_img2, product_img3,product_price, product_psp_price, product_desc, product_keywords, product_label) 
-			values ('$product_cat','$cat','$manufacturer_id', NOW(),'$product_title','$product_img1','$product_img2','$product_img3',
-			'$product_price', '$psp_price' ,'$product_desc', '$product_keywords', $product_label)";
+			product_img1, product_img2, product_img3,product_price, product_psp_price, product_desc, 
+			product_keywords, product_label) 
+			values ('$product_cat','$cat','$manufacturer_id', NOW(),'$product_title','$product_img1',
+			'$product_img2','$product_img3',
+			'$product_price', '$psp_price', '$product_desc', '$product_keywords', '$product_label')";
 
 			$run_product = mysqli_query($con, $insert_product);
 
