@@ -17,6 +17,7 @@
 	$row_product = mysqli_fetch_array($run_product);
 
 	$p_cat_id=$row_product['p_cat_id'];
+	$pro_id = $row_product['product_id'];
 	$pro_title=$row_product['product_title'];
 	$pro_price=$row_product['product_price'];
 	$pro_desc=$row_product['product_desc'];
@@ -315,6 +316,26 @@
 									</select>	
 								</div><!--col-md-7 ends -->
 						</div><!--form-group ends -->
+
+<center><!-- center starts -->
+<?php
+
+$get_icons = "select * from icons where icon_product='$pro_id'";
+$run_icons = mysqli_query($con, $get_icons);
+
+while ($row_icons = mysqli_fetch_array($run_icons)) {
+	
+$icon_image = $row_icons['icon_image'];
+
+echo "<img src='admin_area/icon_images/$icon_image' width='45' height='45'>
+&nbsp; &nbsp; &nbsp;";
+
+}
+
+?>
+</center><!-- center ends -->
+
+
 <?php
 if ($pro_label == "Sale" or $pro_label == "Promo!") {
 	echo "
