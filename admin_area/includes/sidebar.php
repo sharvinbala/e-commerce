@@ -159,6 +159,28 @@ else
 
 </ul>
 
+<li><!-- Icons Li Starts -->
+<a href="#" data-toggle="collapse" data-target="#icons">
+<i class="fa fa-fw fa-retweet"> </i> Icons
+<i class="fa fa-fw fa-caret-down" ></i>
+</a>
+
+<ul id="icons" class="collapse"><!-- Icons Ul Starts -->
+
+<li>
+<a href="index.php?insert_icon"> Insert Icon </a>
+</li>
+
+
+<li>
+<a href="index.php?view_icons"> View Icons </a>
+</li>
+
+</ul><!-- Icons Ul Ends -->
+
+</li><!-- Icons Li Ends -->
+
+
 </li><!-- li Ends -->
 
 <li><!-- manufacturer li Starts -->

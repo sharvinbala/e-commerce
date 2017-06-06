@@ -363,6 +363,33 @@ include("delete_coupon.php");
 }
 
 
+if(isset($_GET['insert_icon'])){
+
+include("insert_icon.php");
+
+}
+
+
+if(isset($_GET['edit_icon'])){
+
+include("edit_icon.php");
+
+}
+
+
+if(isset($_GET['view_icons'])){
+
+include("view_icons.php");
+
+}
+
+if(isset($_GET['delete_icon'])){
+
+include("delete_icon.php");
+
+}
+
+
 ?>
 
 </div><!-- container-fluid Ends -->

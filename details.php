@@ -456,7 +456,7 @@ else
 
 					
 					</center>
-						<h3><a href='$pro_url'>$'pro_title</a></h3>
+						<h3><a href='$pro_url'>'$pro_title'</a></h3>
 							<p class='price'>RM $product_price $product_psp_price</p>
 							<p class='buttons'>
 								<a href='$pro_url' class='btn btn-default'>View Details</a>
