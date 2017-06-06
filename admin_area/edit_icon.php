@@ -50,11 +50,11 @@ $product_title = $row_products['product_title'];
 
 ?>
 
-<div class="row"><!-- 1 row Starts --->
+<div class="row"><!-- 1 row Starts -->
 
 <div class="col-lg-12"><!-- col-lg-12 Starts -->
 
-<ol class="breadcrumb"><!-- breadcrumb Starts --->
+<ol class="breadcrumb"><!-- breadcrumb Starts -->
 
 <li class="active">
 
@@ -62,11 +62,11 @@ $product_title = $row_products['product_title'];
 
 </li>
 
-</ol><!-- breadcrumb Ends --->
+</ol><!-- breadcrumb Ends -->
 
 </div><!-- col-lg-12 Ends -->
 
-</div><!-- 1 row Ends --->
+</div><!-- 1 row Ends -->
 
 
 <div class="row"><!-- 2 row Starts -->

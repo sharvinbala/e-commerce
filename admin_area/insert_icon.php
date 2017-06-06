@@ -120,7 +120,7 @@ echo "<input type='checkbox' value='$p_id' name='product_id[]'> &nbsp;$p_title <
 
 <div class="col-md-6">
 
-<input type="file" name="icon_image" class="form-control" >
+<input type="file" name="icon_image" class="form-control" required >
 
 </div>
 
